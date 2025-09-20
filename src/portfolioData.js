@@ -103,18 +103,15 @@ export const incidents = [
     title: "Lumma Stealer using Fake Captcha", 
     severity: "Critical", 
     tags: ["Initial Access","Credential Stealer","MSHTA.exe"], 
-    notes: "Quarantined message, reset creds, reviewed app consent logs.",
-    threatAnalysis: "Suspicious email with fake captcha attachment delivered to multiple users, MSHTA.exe executed to download Lumma Stealer, credential theft attempt detected",
-    responseActions: "Immediately quarantined the malicious email, reset all affected user credentials, reviewed application consent logs for unauthorized access, and updated detection rules"
+    whatHappened: "User was redirected to a fake CAPTCHA page that copied a malicious mshta.exe command to clipboard. The user unknowingly executed it via Win+R, triggering the download of Lumma Stealer malware.",
+    howIResponded: "Initiated on-call response to immediately isolate the infected device, disabled the user account to prevent potential lateral movement, investigated the redirection source, confirmed the referrer through sandbox analysis, and blocked the identified indicators of compromise (IoCs) across the environment."
   },
   { 
-    date: "2025-07-22", 
-    title: "Beaconing from Host EU-043", 
-    severity: "Medium", 
-    tags: ["EDR", "C2"], 
-    notes: "Isolated device via XDR, collected timeline, no lateral movement observed.",
-    threatAnalysis: "Host EU-043 established persistent C2 communication with suspicious external IP, beaconing activity detected every 30 minutes, potential data exfiltration observed",
-    responseActions: "Isolated the compromised device using XDR capabilities, collected comprehensive timeline data, analyzed network flows, and confirmed no lateral movement occurred"
+    title: "User Password Compromise Due to Brute Force",
+    severity: "High",
+    tags: ["Account", "Brute Force", "Credential Security", "MFA"],
+    whatHappened: "User's password was compromised through brute force attempts, but login was blocked by MFA enforcement.",
+    howIResponded: "Engaged service desk to initiate password reset, advised user to set a strong password, and proposed stronger password policy with reduced expiry duration.",
   },
   { 
     date: "2025-07-03", 
@@ -122,7 +119,7 @@ export const incidents = [
     severity: "Low", 
     tags: ["Account", "Brute Force"], 
     notes: "Enabled number match, blocked source IP ranges, user education.",
-    threatAnalysis: "Multiple users reported receiving excessive MFA prompts, automated brute force attack targeting corporate accounts detected, suspicious IPs attempting credential stuffing",
+    whatHappened: "Multiple users reported receiving excessive MFA prompts, automated brute force attack targeting corporate accounts detected, suspicious IPs attempting credential stuffing",
     responseActions: "Enabled number matching for MFA, blocked malicious IP ranges, conducted user security awareness training, and implemented additional monitoring"
   },
 ];
