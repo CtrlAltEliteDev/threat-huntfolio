@@ -1195,7 +1195,6 @@ ul li::before {
 .section-header {
   display: flex;
   align-items: center;
-  gap: 16px;
   margin-bottom: 24px;
   padding-bottom: 16px;
   border-bottom: 2px solid var(--border);
@@ -1214,13 +1213,13 @@ ul li::before {
 }
 
 .education-icon-large {
-  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
+  background: none;
+  box-shadow: none;
 }
 
 .achievements-icon-large {
-  background: linear-gradient(135deg, #10b981, #059669);
-  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);
+  background: none;
+  box-shadow: none;
 }
 
 /* Modern Education Card */
@@ -1605,13 +1604,10 @@ ul li::before {
   left: 0;
   width: 3px;
   height: 100%;
-  background: var(--amber);
   border-radius: 0 2px 2px 0;
 }
 
-.incident-details:last-of-type::before {
-  background: #10b981;
-}
+
 
 .detail-header {
   font-family: var(--font-primary);
@@ -1632,13 +1628,6 @@ ul li::before {
   border-color: rgba(0, 255, 0, 0.15) !important;
 }
 
-[data-theme="dark"] .incident-details::before {
-  background: #00ff00;
-}
-
-[data-theme="dark"] .incident-details:last-of-type::before {
-  background: #00ff41;
-}
 
 /* Dark theme adjustments */
 [data-theme="dark"] .education-card-modern {

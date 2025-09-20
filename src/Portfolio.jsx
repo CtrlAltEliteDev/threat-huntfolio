@@ -492,7 +492,7 @@ export default function Portfolio() {
                           <Shield size={14} className="accent"/>
                           <span style={{fontWeight:600, fontSize:13, color:'var(--text)'}}>What Happened:</span>
                         </div>
-                        <p style={{fontSize:13, lineHeight:1.5, margin:0, color:'var(--muted-2)'}}>{it.whatHappened}</p>
+                        <p style={{fontSize:13,marginRight:10, lineHeight:1.5, textAlign:'left', color:'var(--muted-2)'}}>{it.whatHappened}</p>
                       </div>
 
                       {/* Response Actions Section */}
@@ -501,7 +501,7 @@ export default function Portfolio() {
                           <Zap size={14} className="accent"/>
                           <span style={{fontWeight:600, fontSize:13, color:'var(--text)'}}>How I responded:</span>
                         </div>
-                        <p style={{fontSize:13, lineHeight:1.5, margin:0, color:'var(--muted-2)'}}>{it.howIResponded}</p>
+                        <p style={{fontSize:13, lineHeight:1.5, marginRight:10,textAlign:'left', color:'var(--muted-2)'}}>{it.howIResponded}</p>
                       </div>
                     </div>
                   )) : (
