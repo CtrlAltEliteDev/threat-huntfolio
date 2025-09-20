@@ -103,8 +103,8 @@ export const incidents = [
     severity: "Critical", 
     tags: ["Initial Access","Credential Stealer","MSHTA.exe"], 
     notes: "Quarantined message, reset creds, reviewed app consent logs.",
-    whatIDid: "Analyzed suspicious email attachment, identified MSHTA.exe execution pattern, traced credential theft attempt",
-    howIResponded: "Immediately quarantined the malicious email, reset all affected user credentials, reviewed application consent logs for unauthorized access, and updated detection rules"
+    threatAnalysis: "Suspicious email with fake captcha attachment delivered to multiple users, MSHTA.exe executed to download Lumma Stealer, credential theft attempt detected",
+    responseActions: "Immediately quarantined the malicious email, reset all affected user credentials, reviewed application consent logs for unauthorized access, and updated detection rules"
   },
   { 
     date: "2025-07-22", 
@@ -112,8 +112,8 @@ export const incidents = [
     severity: "Medium", 
     tags: ["EDR", "C2"], 
     notes: "Isolated device via XDR, collected timeline, no lateral movement observed.",
-    whatIDid: "Detected unusual network traffic patterns, identified C2 communication, performed endpoint investigation",
-    howIResponded: "Isolated the compromised device using XDR capabilities, collected comprehensive timeline data, analyzed network flows, and confirmed no lateral movement occurred"
+    threatAnalysis: "Host EU-043 established persistent C2 communication with suspicious external IP, beaconing activity detected every 30 minutes, potential data exfiltration observed",
+    responseActions: "Isolated the compromised device using XDR capabilities, collected comprehensive timeline data, analyzed network flows, and confirmed no lateral movement occurred"
   },
   { 
     date: "2025-07-03", 
@@ -121,7 +121,7 @@ export const incidents = [
     severity: "Low", 
     tags: ["Account", "Brute Force"], 
     notes: "Enabled number match, blocked source IP ranges, user education.",
-    whatIDid: "Identified brute force attack pattern targeting MFA, analyzed source IPs and attack vectors",
-    howIResponded: "Enabled number matching for MFA, blocked malicious IP ranges, conducted user security awareness training, and implemented additional monitoring"
+    threatAnalysis: "Multiple users reported receiving excessive MFA prompts, automated brute force attack targeting corporate accounts detected, suspicious IPs attempting credential stuffing",
+    responseActions: "Enabled number matching for MFA, blocked malicious IP ranges, conducted user security awareness training, and implemented additional monitoring"
   },
 ];

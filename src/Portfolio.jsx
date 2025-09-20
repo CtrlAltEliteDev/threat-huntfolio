@@ -289,22 +289,22 @@ export default function Portfolio() {
                       </div>
                       <p className="muted2" style={{marginTop:8, fontSize:14}}>{it.notes}</p>
                       
-                      {/* What I Did Section */}
+                      {/* Threat Analysis Section */}
                       <div className="incident-details" style={{marginTop:12, padding:12, backgroundColor:'rgba(245, 158, 11, 0.05)', borderRadius:8, border:'1px solid rgba(245, 158, 11, 0.2)'}}>
                         <div className="detail-header" style={{display:'flex', alignItems:'center', gap:8, marginBottom:8}}>
-                          <Eye size={14} className="accent"/>
-                          <span style={{fontWeight:600, fontSize:13, color:'var(--text)'}}>What I Did:</span>
+                          <Shield size={14} className="accent"/>
+                          <span style={{fontWeight:600, fontSize:13, color:'var(--text)'}}>Threat Analysis:</span>
                         </div>
-                        <p style={{fontSize:13, lineHeight:1.5, margin:0, color:'var(--muted-2)'}}>{it.whatIDid}</p>
+                        <p style={{fontSize:13, lineHeight:1.5, margin:0, color:'var(--muted-2)'}}>{it.threatAnalysis}</p>
                       </div>
 
-                      {/* How I Responded Section */}
+                      {/* Response Actions Section */}
                       <div className="incident-details" style={{marginTop:8, padding:12, backgroundColor:'rgba(16, 185, 129, 0.05)', borderRadius:8, border:'1px solid rgba(16, 185, 129, 0.2)'}}>
                         <div className="detail-header" style={{display:'flex', alignItems:'center', gap:8, marginBottom:8}}>
                           <Zap size={14} className="accent"/>
-                          <span style={{fontWeight:600, fontSize:13, color:'var(--text)'}}>How I Responded:</span>
+                          <span style={{fontWeight:600, fontSize:13, color:'var(--text)'}}>Response Actions:</span>
                         </div>
-                        <p style={{fontSize:13, lineHeight:1.5, margin:0, color:'var(--muted-2)'}}>{it.howIResponded}</p>
+                        <p style={{fontSize:13, lineHeight:1.5, margin:0, color:'var(--muted-2)'}}>{it.responseActions}</p>
                       </div>
                     </div>
                   )) : (
