@@ -97,7 +97,31 @@ export const tools = [
 ];
 
 export const incidents = [
-  { date: "2025-08-10", title: "Lumma Stealer using Fake Captcha", severity: "Critical", tags: ["Initial Access","Credential Stealer","MSHTA.exe"], notes: "Quarantined message, reset creds, reviewed app consent logs." },
-  { date: "2025-07-22", title: "Beaconing from Host EU-043", severity: "Medium", tags: ["EDR", "C2"], notes: "Isolated device via XDR, collected timeline, no lateral movement observed." },
-  { date: "2025-07-03", title: "Excessive MFA Prompts", severity: "Low", tags: ["Account", "Brute Force"], notes: "Enabled number match, blocked source IP ranges, user education." },
+  { 
+    date: "2025-08-10", 
+    title: "Lumma Stealer using Fake Captcha", 
+    severity: "Critical", 
+    tags: ["Initial Access","Credential Stealer","MSHTA.exe"], 
+    notes: "Quarantined message, reset creds, reviewed app consent logs.",
+    whatIDid: "Analyzed suspicious email attachment, identified MSHTA.exe execution pattern, traced credential theft attempt",
+    howIResponded: "Immediately quarantined the malicious email, reset all affected user credentials, reviewed application consent logs for unauthorized access, and updated detection rules"
+  },
+  { 
+    date: "2025-07-22", 
+    title: "Beaconing from Host EU-043", 
+    severity: "Medium", 
+    tags: ["EDR", "C2"], 
+    notes: "Isolated device via XDR, collected timeline, no lateral movement observed.",
+    whatIDid: "Detected unusual network traffic patterns, identified C2 communication, performed endpoint investigation",
+    howIResponded: "Isolated the compromised device using XDR capabilities, collected comprehensive timeline data, analyzed network flows, and confirmed no lateral movement occurred"
+  },
+  { 
+    date: "2025-07-03", 
+    title: "Excessive MFA Prompts", 
+    severity: "Low", 
+    tags: ["Account", "Brute Force"], 
+    notes: "Enabled number match, blocked source IP ranges, user education.",
+    whatIDid: "Identified brute force attack pattern targeting MFA, analyzed source IPs and attack vectors",
+    howIResponded: "Enabled number matching for MFA, blocked malicious IP ranges, conducted user security awareness training, and implemented additional monitoring"
+  },
 ];

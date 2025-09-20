@@ -977,6 +977,55 @@ ul li::before {
   flex-shrink: 0;
 }
 
+/* Incident Details Styling */
+.incident-details {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.incident-details::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--amber);
+  border-radius: 0 2px 2px 0;
+}
+
+.incident-details:last-of-type::before {
+  background: #10b981;
+}
+
+.detail-header {
+  font-family: var(--font-primary);
+}
+
+.detail-header span {
+  font-family: var(--font-primary);
+}
+
+/* Dark theme incident details */
+[data-theme="dark"] .incident-details {
+  background: rgba(0, 255, 0, 0.05) !important;
+  border-color: rgba(0, 255, 0, 0.2) !important;
+}
+
+[data-theme="dark"] .incident-details:last-of-type {
+  background: rgba(0, 255, 0, 0.03) !important;
+  border-color: rgba(0, 255, 0, 0.15) !important;
+}
+
+[data-theme="dark"] .incident-details::before {
+  background: #00ff00;
+}
+
+[data-theme="dark"] .incident-details:last-of-type::before {
+  background: #00ff41;
+}
+
 /* Dark theme adjustments */
 [data-theme="dark"] .education-card-modern {
   border-color: rgba(0, 255, 0, 0.3);

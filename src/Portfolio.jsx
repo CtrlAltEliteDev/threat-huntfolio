@@ -288,6 +288,24 @@ export default function Portfolio() {
                         {it.tags.map(t => <span key={t} className="chip">{t}</span>)}
                       </div>
                       <p className="muted2" style={{marginTop:8, fontSize:14}}>{it.notes}</p>
+                      
+                      {/* What I Did Section */}
+                      <div className="incident-details" style={{marginTop:12, padding:12, backgroundColor:'rgba(245, 158, 11, 0.05)', borderRadius:8, border:'1px solid rgba(245, 158, 11, 0.2)'}}>
+                        <div className="detail-header" style={{display:'flex', alignItems:'center', gap:8, marginBottom:8}}>
+                          <Eye size={14} className="accent"/>
+                          <span style={{fontWeight:600, fontSize:13, color:'var(--text)'}}>What I Did:</span>
+                        </div>
+                        <p style={{fontSize:13, lineHeight:1.5, margin:0, color:'var(--muted-2)'}}>{it.whatIDid}</p>
+                      </div>
+
+                      {/* How I Responded Section */}
+                      <div className="incident-details" style={{marginTop:8, padding:12, backgroundColor:'rgba(16, 185, 129, 0.05)', borderRadius:8, border:'1px solid rgba(16, 185, 129, 0.2)'}}>
+                        <div className="detail-header" style={{display:'flex', alignItems:'center', gap:8, marginBottom:8}}>
+                          <Zap size={14} className="accent"/>
+                          <span style={{fontWeight:600, fontSize:13, color:'var(--text)'}}>How I Responded:</span>
+                        </div>
+                        <p style={{fontSize:13, lineHeight:1.5, margin:0, color:'var(--muted-2)'}}>{it.howIResponded}</p>
+                      </div>
                     </div>
                   )) : (
                     <div style={{padding: '20px', textAlign: 'center', color: 'var(--muted)', backgroundColor: 'rgba(255, 0, 0, 0.1)', border: '1px solid red'}}>
