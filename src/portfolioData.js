@@ -52,6 +52,24 @@ export const skills = [
   "Playbook execution",
   "Scripting",
   "Communication",
+  "Threat Hunting",
+  "SIEM Operations",
+  "Log Analysis",
+  "Vulnerability Assessment",
+  "Network Security",
+  "Endpoint Detection",
+  "Malware Analysis",
+  "Forensics",
+  "Risk Assessment",
+  "Security Monitoring",
+  "Alert Correlation",
+  "Incident Response",
+  "Security Awareness",
+  "Compliance",
+  "Documentation",
+  "Team Collaboration",
+  "Problem Solving",
+  "Time Management"
 ];
 
 export const education = {

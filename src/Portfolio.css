@@ -728,6 +728,7 @@ ul li::before {
   align-items: flex-start;
   flex-direction: column;
   padding-left: 18px;
+  text-align: left;
 }
 
 .experience-bullets li {
