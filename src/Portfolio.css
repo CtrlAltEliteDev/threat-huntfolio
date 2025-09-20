@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+
 :root {
   --bg-grad-start: #fefce8; /* light yellow-50 */
   --bg-grad-mid: #fefce8;  /* light yellow-50 */
@@ -12,6 +14,8 @@
   --amber-strong: #b45309; /* amber-700 */
   --amber-soft: #fef3c7; /* amber-100 */
   --ring: rgba(252, 211, 77, 0.6);
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', 'Courier New', monospace;
 }
 
 .dark, [data-theme="dark"] {
@@ -55,6 +59,7 @@
   position: relative; 
   overflow-x: hidden;
   z-index: 10;
+  font-family: var(--font-primary);
 }
 
 html, body { 
@@ -63,6 +68,7 @@ html, body {
   padding: 0; 
   min-height: 100vh;
   overflow-x: hidden;
+  font-family: var(--font-primary);
 }
 
 .container { 
@@ -107,12 +113,14 @@ h1 {
   font-weight: 800; 
   letter-spacing: -0.02em; 
   font-size: 28px;
+  font-family: var(--font-primary);
 }
 
 h2 { 
   margin: 0; 
   font-weight: 700; 
   font-size: 20px;
+  font-family: var(--font-primary);
 }
 
 @media (min-width: 640px) {
@@ -138,6 +146,7 @@ h2 {
 p { 
   line-height: 1.6; 
   font-size: 14px;
+  font-family: var(--font-primary);
 }
 
 @media (min-width: 640px) {
@@ -231,6 +240,7 @@ button {
   background: var(--pill); 
   transition: background-color 0.2s ease;
   cursor: pointer;
+  font-family: var(--font-primary);
 }
 
 @media (min-width: 640px) {
@@ -256,8 +266,8 @@ button {
 
 /* Header block */
 .avatar { 
-  height: 100px; 
-  width: 100px; 
+  height: 120px; 
+  width: 120px; 
   border-radius: 50%; 
   display: grid; 
   place-items: center; 
@@ -278,8 +288,8 @@ button {
 
 @media (min-width: 640px) {
   .avatar {
-    height: 120px;
-    width: 120px;
+    height: 140px;
+    width: 140px;
     border-radius: 50%;
     box-shadow: 0 10px 30px rgba(0,0,0,.25);
     font-size: 18px;
@@ -389,6 +399,7 @@ button {
   border: 1px solid rgba(0,0,0,0.06); 
   background: #fef8e7; 
   color: #78350f; 
+  font-family: var(--font-primary);
 }
 
 [data-theme="dark"] .chip { 
@@ -409,6 +420,7 @@ button {
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  font-family: var(--font-primary);
 }
 
 .skill::before {
@@ -552,6 +564,7 @@ button {
   box-shadow: 0 4px 12px rgba(0,0,0,.12); 
   font-size: 12px;
   transition: all 0.2s ease;
+  font-family: var(--font-primary);
 }
 
 .btn-primary:hover {
@@ -567,6 +580,7 @@ button {
   border: 1px solid var(--border); 
   font-size: 12px;
   transition: all 0.2s ease;
+  font-family: var(--font-primary);
 }
 
 .btn-ghost:hover {
@@ -606,6 +620,7 @@ button {
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
   padding: 16px;
   backdrop-filter: blur(6px);
+  font-family: var(--font-primary);
 }
 
 .timeline::before { 
@@ -679,6 +694,7 @@ ul {
 li {
   margin-top: 8px;
   line-height: 1.6;
+  font-family: var(--font-primary);
 }
 
 /* Fix the gap between bullet point and text */
@@ -692,6 +708,7 @@ ul li {
   /* padding-left: 20px; */
   list-style: none;
   /* left: 8px; */
+  font-family: var(--font-primary);
 }
 
 ul li::before {
@@ -714,10 +731,12 @@ ul li::before {
 .role-title {
   font-weight: 600;
   text-align: left;
+  font-family: var(--font-primary);
 }
 
 .location-text {
   font-size: 13px;
+  font-family: var(--font-primary);
 }
 
 .experience-bullets {
@@ -734,6 +753,7 @@ ul li::before {
 .experience-bullets li {
   margin-top: 8px;
   color: var(--muted-2);
+  font-family: var(--font-primary);
 }
 
 /* Education & Achievements layout */
@@ -800,18 +820,21 @@ ul li::before {
   font-size: 18px;
   color: var(--text);
   margin-bottom: 4px;
+  font-family: var(--font-primary);
 }
 
 .university-name {
   font-weight: 600;
   color: var(--amber);
   margin-bottom: 8px;
+  font-family: var(--font-primary);
 }
 
 .focus-text {
   margin-top: 8px;
   color: var(--muted-2);
   line-height: 1.5;
+  font-family: var(--font-primary);
 }
 
 .education-meta {
@@ -825,6 +848,7 @@ ul li::before {
 .date-range {
   color: var(--muted);
   font-size: 14px;
+  font-family: var(--font-primary);
 }
 
 .cgpa-badge {
@@ -835,6 +859,7 @@ ul li::before {
   font-size: 12px;
   font-weight: 600;
   border: 1px solid var(--amber);
+  font-family: var(--font-primary);
 }
 
 .achievements-section {
@@ -883,6 +908,7 @@ ul li::before {
   color: var(--text);
   line-height: 1.6;
   font-weight: 500;
+  font-family: var(--font-primary);
 }
 
 /* Dark theme specific overrides for education and achievements */
@@ -954,13 +980,14 @@ ul li::before {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: textGlow 2s ease-in-out infinite alternate;
+  font-family: var(--font-primary);
 }
 
 .loader-subtitle {
   font-size: 18px;
   color: #6b7280;
   margin-top: 8px;
-  font-family: 'Courier New', monospace;
+  font-family: var(--font-mono);
   animation: textFade 2s ease-in-out infinite alternate;
 }
 
@@ -1052,7 +1079,7 @@ ul li::before {
   position: absolute;
   top: -100%;
   color: #00ff00;
-  font-family: 'Courier New', monospace;
+  font-family: var(--font-mono);
   font-size: 14px;
   line-height: 14px;
   opacity: 0.8;
@@ -1297,7 +1324,7 @@ ul li::before {
   background: rgba(0, 255, 0, 0.1);
   border: 1px solid rgba(0, 255, 0, 0.3);
   color: #00ff00;
-  font-family: 'Courier New', monospace;
+  font-family: var(--font-mono);
   text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
 }
 
@@ -1322,7 +1349,7 @@ ul li::before {
   background: #000;
   border: 2px solid #00ff00;
   border-radius: 8px;
-  font-family: 'Courier New', monospace;
+  font-family: var(--font-mono);
   position: relative;
 }
 
@@ -1338,14 +1365,6 @@ ul li::before {
   box-shadow: 20px 0 0 #ffff00, 40px 0 0 #00ff00;
 }
 
-[data-theme="dark"] .terminal-window::after {
-  content: 'root@security:~$';
-  position: absolute;
-  top: 30px;
-  left: 8px;
-  color: #00ff00;
-  font-size: 12px;
-}
 
 /* Hacker-style Loading */
 [data-theme="dark"] .hacker-loading {
@@ -1442,6 +1461,7 @@ ul li::before {
   border-bottom: 1px solid var(--border);
   font-weight: 600;
   color: var(--text);
+  font-family: var(--font-primary);
 }
 
 .sidebar-menu {
@@ -1468,6 +1488,7 @@ ul li::before {
   transition: all 0.2s ease;
   font-size: 14px;
   border: 1px solid transparent;
+  font-family: var(--font-primary);
 }
 
 .sidebar-link:hover {

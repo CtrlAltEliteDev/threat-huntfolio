@@ -134,7 +134,7 @@ export default function Portfolio() {
                   </p>
                 </div>
                 <div className="avatar">
-                  <img src="/SOCAnal.jpeg" alt="Pranav Kalidas" className="avatar-image" />
+                  <img src="/SOCAnalyst.jpeg" alt="Pranav Kalidas" className="avatar-image" />
                 </div>
               </div>
               <div className="links">
@@ -169,7 +169,7 @@ export default function Portfolio() {
               <p style={{marginTop:12, fontFamily: isDark ? 'Courier New, monospace' : 'inherit'}}>
                 {isDark ? (
                   <>
-                    <span className="terminal-cursor">root@security:~$</span> Security Analyst with 1.8 years of hands-on SOC experience: monitoring, triaging, and responding to alerts. Skilled in threat detection, incident response, and remediation to safeguard enterprise infrastructure. Calm under pressure, collaborative with L2/L3, and consistently on-time against SLAs.
+                    <span className="terminal-cursor" style={{color: '#00ff00'}}>root@security:~$</span> Security Analyst with 1.8 years of hands-on SOC experience: monitoring, triaging, and responding to alerts. Skilled in threat detection, incident response, and remediation to safeguard enterprise infrastructure. Calm under pressure, collaborative with L2/L3, and consistently on-time against SLAs.
                   </>
                 ) : (
                   'Security Analyst with 1.8 years of hands-on SOC experience: monitoring, triaging, and responding to alerts. Skilled in threat detection, incident response, and remediation to safeguard enterprise infrastructure. Calm under pressure, collaborative with L2/L3, and consistently on-time against SLAs.'
@@ -231,7 +231,7 @@ export default function Portfolio() {
                       rel="noopener noreferrer"
                       style={{textDecoration:'none', color:'inherit'}}
                     >
-                      <div style={{height:40, width:40, borderRadius:999, display:'grid', placeItems:'center', overflow:'hidden', cursor:'pointer'}}>
+                      <div style={{height:42, width:40, borderRadius:999, display:'grid', placeItems:'center', overflow:'hidden', cursor:'pointer'}}>
                         <img 
                           src={c.image} 
                           alt={c.org} 
@@ -343,7 +343,7 @@ export default function Portfolio() {
               <p className="muted2" style={{marginTop:8, fontFamily: isDark ? 'Courier New, monospace' : 'inherit'}}>
                 {isDark ? (
                   <>
-                    <span className="terminal-cursor">root@security:~$</span> Open to security analyst roles, SOC operations, and threat detection projects.
+                    <span className="terminal-cursor" style={{color: '#00ff00'}}>root@security:~$</span> Open to security analyst roles, SOC operations, and threat detection projects.
                   </>
                 ) : (
                   'Open to security analyst roles, SOC operations, and threat detection projects.'
