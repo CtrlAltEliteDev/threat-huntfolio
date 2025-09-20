@@ -326,8 +326,12 @@ export default function Portfolio() {
               <div className="grid-tiles mt-6">
                 {certifications.map((c, i) => (
                   <div key={i} className="card animate-entrance" style={{display:'flex', alignItems:'center', gap:12, animationDelay: `${0.6 + (i * 0.1)}s`}}>
-                    <div style={{height:40, width:40, borderRadius:999, background:'linear-gradient(135deg,#f59e0b,#fde047)', display:'grid', placeItems:'center', color:'#fff', fontWeight:800, outline:`2px solid ${'var(--ring)'}`}}>
-                      {c.abbr}
+                    <div style={{height:40, width:40, borderRadius:999, display:'grid', placeItems:'center', overflow:'hidden'}}>
+                      <img 
+                        src={c.image} 
+                        alt={c.org} 
+                        style={{width:'100%', height:'100%', objectFit:'cover', borderRadius:'50%'}}
+                      />
                     </div>
                     <div>
                       <div style={{fontWeight:600}}>{c.name}</div>
