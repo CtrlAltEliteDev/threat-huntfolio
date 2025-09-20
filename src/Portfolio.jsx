@@ -8,7 +8,9 @@ import {
   education,
   achievements,
   tools,
-  incidents
+  incidents,
+  scriptingLanguages,
+  spokenLanguages
 } from "./portfolioData";
 import {
   Mail,
@@ -79,7 +81,7 @@ export default function Portfolio() {
     autoplay: true,
     autoplaySpeed: 2500,
     speed: 600,
-    slidesToShow: 2,
+    slidesToShow: 3,
     slidesToScroll: 1,
     pauseOnHover: true,
     swipeToSlide: true,
@@ -327,17 +329,50 @@ export default function Portfolio() {
               {/* Skills */}
               <div className="skills-container animate-entrance" style={{animationDelay: '0.4s'}}>
                 <h2 className="row" style={{fontSize:'clamp(18px,3vw,24px)'}}><Code2 size={20} className="accent"/> Skills</h2>
+                <div className="skills-group" style={{ marginTop: 16 }}>
+                  <div className="muted2" style={{ fontWeight: 600, marginBottom: 8 }}>Core Skills</div>
+                  <div className="skills-list">
+                    {skills.map((s, index) => (
+                      <span 
+                        key={s} 
+                        className="skill" 
+                        style={{ '--skill-index': index }}
+                      >
+                        {s}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+              <div className="skills-group" style={{ marginTop: 16 }}>
+                <div className="muted2" style={{ fontWeight: 600, marginBottom: 8 }}>Scripting Languages</div>
                 <div className="skills-list">
-                  {skills.map((s, index) => (
-                    <span 
-                      key={s} 
-                      className="skill" 
+                  {scriptingLanguages.map((lang, index) => (
+                    <span
+                      key={lang}
+                      className="skill"
                       style={{ '--skill-index': index }}
                     >
-                      {s}
+                      {lang}
                     </span>
                   ))}
                 </div>
+              </div>
+
+              <div className="skills-group" style={{ marginTop: 16 }}>
+                <div className="muted2" style={{ fontWeight: 600, marginBottom: 8 }}>Spoken Languages</div>
+                <div className="skills-list">
+                  {spokenLanguages.map((lang, index) => (
+                    <span
+                      key={lang}
+                      className="skill"
+                      style={{ '--skill-index': index }}
+                    >
+                      {lang}
+                    </span>
+                  ))}
+                </div>
+              </div>
               </div>
             </section>
 
