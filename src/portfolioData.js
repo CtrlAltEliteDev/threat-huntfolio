@@ -14,6 +14,7 @@ export const experience = [
     location: "Bengaluru",
     start: "Dec 2023",
     end: "Present",
+    logo: "/Tech_Mahindra.png",
     bullets: [
       "SOC Analyst as a Managed Security Service Provider (MSSP) supporting SES Telecom, a leading European telecom firm with 5000+ employees",
       "Performed alert triage using KQL across all shifts with due diligence.",
@@ -28,6 +29,7 @@ export const experience = [
     location: "Chennai",
     start: "Oct 2022",
     end: "Sep 2023",
+    logo: "/Netmeds.jpg",
     bullets: [
       "Implemented Java business logic for inbound/outbound inventory flow.",
       "Partnered with cross-functional teams to stabilize stock management.",
