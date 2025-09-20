@@ -326,17 +326,31 @@ export default function Portfolio() {
               <div className="grid-tiles mt-6">
                 {certifications.map((c, i) => (
                   <div key={i} className="card animate-entrance" style={{display:'flex', alignItems:'center', gap:12, animationDelay: `${0.6 + (i * 0.1)}s`}}>
-                    <div style={{height:40, width:40, borderRadius:999, display:'grid', placeItems:'center', overflow:'hidden'}}>
-                      <img 
-                        src={c.image} 
-                        alt={c.org} 
-                        style={{width:'100%', height:'100%', objectFit:'cover', borderRadius:'50%'}}
-                      />
-                    </div>
-                    <div>
-                      <div style={{fontWeight:600}}>{c.name}</div>
-                      <div className="muted" style={{fontSize:12}}>{c.org} • {c.date}</div>
-                    </div>
+                    <a 
+                      href={c.url.startsWith('http') ? c.url : `https://${c.url}`} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      style={{textDecoration:'none', color:'inherit'}}
+                    >
+                      <div style={{height:40, width:40, borderRadius:999, display:'grid', placeItems:'center', overflow:'hidden', cursor:'pointer'}}>
+                        <img 
+                          src={c.image} 
+                          alt={c.org} 
+                          style={{width:'100%', height:'100%', objectFit:'cover', borderRadius:'50%'}}
+                        />
+                      </div>
+                    </a>
+                    <a 
+                      href={c.url.startsWith('http') ? c.url : `https://${c.url}`} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      style={{textDecoration:'none', color:'inherit', flex:1}}
+                    >
+                      <div style={{textAlign:'left'}}>
+                        <div style={{fontWeight:600, cursor:'pointer'}}>{c.name}</div>
+                        <div className="muted" style={{fontSize:12}}>{c.org} • {c.date}</div>
+                      </div>
+                    </a>
                   </div>
                 ))}
               </div>
