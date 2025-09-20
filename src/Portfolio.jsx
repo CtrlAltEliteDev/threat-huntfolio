@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import "./Portfolio.css";
 import {
   contact,
@@ -33,7 +33,6 @@ import {
 export default function Portfolio() {
   const [isDark, setIsDark] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
-  const matrixRef = useRef(null);
 
   useEffect(() => {
     // Ensure Tailwind dark mode works: requires tailwind.config.js -> darkMode: 'class'
@@ -58,63 +57,6 @@ export default function Portfolio() {
   }, []);
 
 
-  // Matrix rain effect for dark theme
-  useEffect(() => {
-    if (!isDark || !matrixRef.current) return;
-
-    const matrixChars = `<script>alert('Hello')</script>`;
-    const columns = Math.floor(window.innerWidth / 20);
-    const matrixContainer = matrixRef.current;
-
-    // Clear existing columns
-    matrixContainer.innerHTML = '';
-
-    // Create matrix columns
-    for (let i = 0; i < columns; i++) {
-      const column = document.createElement('div');
-      column.className = 'matrix-column';
-      column.style.left = `${i * 20}px`;
-      column.style.animationDelay = `${Math.random() * 8}s`;
-      column.style.animationDuration = `${6 + Math.random() * 4}s`;
-      
-      // Generate random characters for this column
-      let text = '';
-      for (let j = 0; j < 50; j++) {
-        text += matrixChars[Math.floor(Math.random() * matrixChars.length)] + '\n';
-      }
-      column.textContent = text;
-      
-      matrixContainer.appendChild(column);
-    }
-
-    // Update on resize
-    const handleResize = () => {
-      if (isDark) {
-        const newColumns = Math.floor(window.innerWidth / 20);
-        if (newColumns !== columns) {
-          matrixContainer.innerHTML = '';
-          for (let i = 0; i < newColumns; i++) {
-            const column = document.createElement('div');
-            column.className = 'matrix-column';
-            column.style.left = `${i * 20}px`;
-            column.style.animationDelay = `${Math.random() * 8}s`;
-            column.style.animationDuration = `${6 + Math.random() * 4}s`;
-            
-            let text = '';
-            for (let j = 0; j < 50; j++) {
-              text += matrixChars[Math.floor(Math.random() * matrixChars.length)] + '\n';
-            }
-            column.textContent = text;
-            
-            matrixContainer.appendChild(column);
-          }
-        }
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [isDark]);
 
   const toggleTheme = () => {
     const next = !isDark;
@@ -126,56 +68,14 @@ export default function Portfolio() {
 
 
 
-  // PDF generator (branded amber)
-  const generateResumePDF = async () => {
-    const { jsPDF } = await import('jspdf');
-    const doc = new jsPDF({ unit: 'pt', format: 'a4' });
-    // header band
-    doc.setFillColor(245, 200, 66); // amber ~
-    doc.rect(0, 0, 595.28, 80, 'F');
-    doc.setTextColor(30, 30, 30);
-    doc.setFont('helvetica', 'bold');
-    doc.setFontSize(20);
-    doc.text(contact.name, 40, 50);
-    doc.setFontSize(11);
-    doc.setFont('helvetica', 'normal');
-    doc.text(`${contact.title}  •  ${contact.location}`, 40, 68);
-    doc.text(`${contact.email}  •  linkedin.com/in/pranav-kalidas`, 40, 84);
-
-    let y = 120;
-    const addSection = (title) => {
-      doc.setFont('helvetica', 'bold');
-      doc.setFontSize(13);
-      doc.setTextColor(180, 130, 0);
-      doc.text(title, 40, y);
-      y += 16;
-      doc.setTextColor(20, 20, 20);
-      doc.setFont('helvetica', 'normal');
-      doc.setFontSize(11);
-    };
-
-    addSection('Summary');
-    const summary = doc.splitTextToSize(contact.summary, 515);
-    doc.text(summary, 40, y); y += summary.length * 14 + 6;
-
-    addSection('Skills');
-    doc.text(skills.join(' • '), 40, y); y += 24;
-
-    addSection('Certifications');
-    certifications.forEach(c => { doc.text(`• ${c.name} — ${c.org} (${c.date})`, 40, y); y += 16; });
-
-    addSection('Experience');
-    experience.forEach(e => {
-      doc.text(`${e.role} — ${e.company} (${e.start} – ${e.end})`, 40, y); y += 14;
-      e.bullets.forEach(b => { doc.text(`- ${b}`, 52, y); y += 14; });
-      y += 6;
-    });
-
-    addSection('Education');
-    doc.text(`${education.degree} — ${education.uni} • ${education.cgpa}`, 40, y); y += 14;
-    doc.text(`Focus: ${education.focus} (${education.start} – ${education.end})`, 40, y);
-
-    doc.save('Pranav_Kalidas_Resume.pdf');
+  // PDF download function
+  const generateResumePDF = () => {
+    const link = document.createElement('a');
+    link.href = '/Pranav Kalidas Resume v1.3.pdf';
+    link.download = 'Pranav_Kalidas_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -205,7 +105,6 @@ export default function Portfolio() {
           {/* Cyberpunk Effects for Dark Theme */}
           {isDark && (
             <>
-              <div className="matrix-rain" ref={matrixRef}></div>
               <div className="scan-lines"></div>
               <div className="cyber-grid"></div>
             </>
