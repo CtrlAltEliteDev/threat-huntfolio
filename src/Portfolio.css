@@ -1227,7 +1227,7 @@ ul li::before {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 20px;
-  padding: 24px;
+  padding: 19px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
   backdrop-filter: blur(6px);
   transition: all 0.3s ease;
@@ -1278,12 +1278,13 @@ ul li::before {
 
 .education-timeline {
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 12px;
   padding: 16px;
-  background: rgba(245, 158, 11, 0.05);
-  border-radius: 12px;
-  border: 1px solid rgba(245, 158, 11, 0.2);
+  /* background: rgba(245, 158, 11, 0.05); */
+  /* border-radius: 12px; */
+  /* border: 1px solid rgba(245, 158, 11, 0.2); */
 }
 
 .timeline-dot {
@@ -1298,8 +1299,7 @@ ul li::before {
 .timeline-content {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  flex: 1;
+  gap: 20px;
 }
 
 .timeline-period {
@@ -1666,10 +1666,7 @@ ul li::before {
   box-shadow: 0 0 0 4px rgba(0, 255, 0, 0.2);
 }
 
-[data-theme="dark"] .cgpa-highlight {
-  background: #00ff00;
-  color: #000;
-}
+
 
 .education-section {
   background: var(--card);
@@ -2129,6 +2126,13 @@ ul li::before {
   content: '█';
   animation: blink 1s infinite;
   color: #00ff00;
+}
+
+/* Disable terminal cursor for section titles only */
+[data-theme="dark"] .tools-section h2 .terminal-cursor::after,
+[data-theme="dark"] .professional-summary-section h2 .terminal-cursor::after {
+  content: none;
+  animation: none;
 }
 
 @keyframes blink {

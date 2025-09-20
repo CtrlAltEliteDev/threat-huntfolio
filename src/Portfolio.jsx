@@ -31,7 +31,9 @@ import {
   Globe,
   Monitor,
   Lock,
-  Activity
+  Activity,
+  ChevronDown,
+  ChevronUp
 } from "lucide-react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -40,6 +42,14 @@ import "slick-carousel/slick/slick-theme.css";
 export default function Portfolio() {
   const [isDark, setIsDark] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
+  const [expandedIncidents, setExpandedIncidents] = useState({});
+
+  const toggleIncidentDetails = (incidentTitle) => {
+    setExpandedIncidents(prev => ({
+      ...prev,
+      [incidentTitle]: !prev[incidentTitle]
+    }));
+  };
 
   useEffect(() => {
     // Ensure Tailwind dark mode works: requires tailwind.config.js -> darkMode: 'class'
@@ -173,10 +183,8 @@ export default function Portfolio() {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      maxWidth: 180,        // Increased size
-      width: 180,           // Increased size
-      height: 180,          // Increased size
-      marginRight: 32,
+      width: 230,           // Increased size
+      height: 230,          // Increased size
       flexShrink: 0,
     }}
   >
@@ -272,7 +280,7 @@ export default function Portfolio() {
 
           {/* Summary */}
           <main className="container" style={{paddingBottom: 64}}>
-            <section className={`card animate-entrance ${isDark ? 'terminal-window' : ''}`} style={{animationDelay: '0.1s',paddingTop:'6vh'}}>
+            <section className={`card animate-entrance professional-summary-section ${isDark ? 'terminal-window' : ''}`} style={{animationDelay: '0.1s',paddingTop:'6vh'}}>
               <h2 className="row" style={{fontSize:'clamp(18px,3vw,24px)'}}>
                 <Shield size={20} className="accent"/> 
                 {isDark ? (
@@ -284,7 +292,7 @@ export default function Portfolio() {
               <p style={{marginTop:12, fontFamily: isDark ? 'Courier New, monospace' : 'inherit'}}>
                 {isDark ? (
                   <>
-                    <span className="terminal-cursor" style={{color: '#00ff00'}}>root@security:~$</span> Security Analyst with 2 years of hands-on SOC experience: monitoring, triaging, and responding to alerts. Skilled in threat detection, incident response, and remediation to safeguard enterprise infrastructure. Calm under pressure, collaborative with L2/L3, and consistently on-time against SLAs.
+                    <span style={{color: '#00ff00'}}>root@security:~$ </span>Security Analyst with 1.8 years of hands-on SOC experience: monitoring, triaging, and responding to alerts. Skilled in threat detection, incident response, and remediation to safeguard enterprise infrastructure. Calm under pressure, collaborative with L2/L3, and consistently on-time against SLAs.<span className="terminal-cursor"></span> 
                   </>
                 ) : (
                   'Security Analyst with 1.8 years of hands-on SOC experience: monitoring, triaging, and responding to alerts. Skilled in threat detection, incident response, and remediation to safeguard enterprise infrastructure. Calm under pressure, collaborative with L2/L3, and consistently on-time against SLAs.'
@@ -409,7 +417,7 @@ export default function Portfolio() {
             </section>
 
             {/* Tools & Technologies */}
-            <section className="card mt-8 animate-entrance" style={{animationDelay: '0.7s'}}>
+            <section className="card mt-8 animate-entrance tools-section" style={{animationDelay: '0.7s'}}>
               <h2 className="row" style={{fontSize:'clamp(18px,3vw,24px)', marginBottom: '24px'}}>
                 <Code2 size={20} className="accent"/>
                 {isDark ? (
@@ -486,22 +494,78 @@ export default function Portfolio() {
                       </div>
                       <p className="muted2" style={{marginTop:8, fontSize:14}}>{it.notes}</p>
                       
-                      {/* Threat Analysis Section */}
-                      <div className="incident-details" style={{marginTop:12, padding:12, backgroundColor:'rgba(245, 158, 11, 0.05)', borderRadius:8, border:'1px solid rgba(245, 158, 11, 0.2)'}}>
-                        <div className="detail-header" style={{display:'flex', alignItems:'center', gap:8, marginBottom:8}}>
-                          <Shield size={14} className="accent"/>
-                          <span style={{fontWeight:600, fontSize:13, color:'var(--text)'}}>What Happened:</span>
-                        </div>
-                        <p style={{fontSize:13,marginRight:10, lineHeight:1.5, textAlign:'left', color:'var(--muted-2)'}}>{it.whatHappened}</p>
-                      </div>
+                      {/* Show More/Less Button */}
+                      <button 
+                        onClick={() => toggleIncidentDetails(it.title)}
+                        style={{
+                          marginTop: 12,
+                          padding: '6px 0',
+                          backgroundColor: 'transparent',
+                          color: 'var(--amber)',
+                          border: 'none',
+                          borderRadius: '0',
+                          cursor: 'pointer',
+                          fontSize: '11px',
+                          fontWeight: '500',
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '4px',
+                          transition: 'all 0.3s ease',
+                          fontFamily: 'var(--font-primary)',
+                          textDecoration: 'underline',
+                          textUnderlineOffset: '2px',
+                          position: 'relative',
+                          overflow: 'hidden',
+                          outline: 'none'
+                        }}
+                        onMouseOver={(e) => {
+                          e.target.style.color = 'var(--amber-strong)';
+                          e.target.style.textDecorationThickness = '2px';
+                        }}
+                        onMouseOut={(e) => {
+                          e.target.style.color = 'var(--amber)';
+                          e.target.style.textDecorationThickness = '1px';
+                        }}
+                      >
+                        {expandedIncidents[it.title] ? (
+                          <>
+                            <ChevronUp size={14} />
+                            Show Less
+                          </>
+                        ) : (
+                          <>
+                            <ChevronDown size={14} />
+                            Show More
+                          </>
+                        )}
+                      </button>
 
-                      {/* Response Actions Section */}
-                      <div className="incident-details" style={{marginTop:8, padding:12, backgroundColor:'rgba(16, 185, 129, 0.05)', borderRadius:8, border:'1px solid rgba(16, 185, 129, 0.2)'}}>
-                        <div className="detail-header" style={{display:'flex', alignItems:'center', gap:8, marginBottom:8}}>
-                          <Zap size={14} className="accent"/>
-                          <span style={{fontWeight:600, fontSize:13, color:'var(--text)'}}>How I responded:</span>
+                      {/* Collapsible Details */}
+                      <div 
+                        style={{
+                          maxHeight: expandedIncidents[it.title] ? '500px' : '0',
+                          overflow: 'hidden',
+                          transition: 'max-height 0.4s ease-in-out, opacity 0.3s ease-in-out',
+                          opacity: expandedIncidents[it.title] ? 1 : 0
+                        }}
+                      >
+                        {/* Threat Analysis Section */}
+                        <div className="incident-details" style={{marginTop:12, padding:12, backgroundColor:'rgba(245, 158, 11, 0.05)', borderRadius:8, border:'1px solid rgba(245, 158, 11, 0.2)'}}>
+                          <div className="detail-header" style={{display:'flex', alignItems:'center', gap:8, marginBottom:8}}>
+                            <Shield size={14} className="accent"/>
+                            <span style={{fontWeight:600, fontSize:13, color:'var(--text)'}}>What Happened:</span>
+                          </div>
+                          <p style={{fontSize:13,marginRight:10, lineHeight:1.5, textAlign:'left', color:'var(--muted-2)'}}>{it.whatHappened}</p>
                         </div>
-                        <p style={{fontSize:13, lineHeight:1.5, marginRight:10,textAlign:'left', color:'var(--muted-2)'}}>{it.howIResponded}</p>
+
+                        {/* Response Actions Section */}
+                        <div className="incident-details" style={{marginTop:8, padding:12, backgroundColor:'rgba(16, 185, 129, 0.05)', borderRadius:8, border:'1px solid rgba(16, 185, 129, 0.2)'}}>
+                          <div className="detail-header" style={{display:'flex', alignItems:'center', gap:8, marginBottom:8}}>
+                            <Zap size={14} className="accent"/>
+                            <span style={{fontWeight:600, fontSize:13, color:'var(--text)'}}>How I responded:</span>
+                          </div>
+                          <p style={{fontSize:13, lineHeight:1.5, marginRight:10,textAlign:'left', color:'var(--muted-2)'}}>{it.howIResponded}</p>
+                        </div>
                       </div>
                     </div>
                   )) : (
@@ -570,14 +634,14 @@ export default function Portfolio() {
             </section>
 
             {/* CTA */}
-            <section className={`card mt-8 center animate-entrance ${isDark ? 'data-stream' : ''}`} style={{animationDelay: '1.6s'}}>
+            <section className={`card mt-8 center animate-entrance ${isDark ? 'data-stream' : ''}`} style={{display: 'flex', flexDirection: 'column', alignItems: 'center',justifyContent: 'center', animationDelay: '1.6s'}}>
               <h2 style={{fontSize:'clamp(18px,3vw,24px)'}}>
                 "Let's connect"
               </h2>
-              <p className="muted2" style={{marginTop:8, fontFamily: isDark ? 'Courier New, monospace' : 'inherit'}}>
+              <p className="muted2" style={{marginTop:8, fontFamily: isDark ? 'Courier New, monospace' : 'inherit', textAlign: 'center'}}>
                 {isDark ? (
                   <>
-                    <span className="terminal-cursor" style={{color: '#00ff00'}}>root@security:~$</span> Open to security analyst roles, SOC operations, and threat detection projects.
+                    <span style={{color: '#00ff00'}}>root@security:~$ </span>Open to security analyst roles, SOC operations, and threat detection projects.<span className="terminal-cursor"></span>
                   </>
                 ) : (
                   'Open to security analyst roles, SOC operations, and threat detection projects.'
@@ -586,19 +650,11 @@ export default function Portfolio() {
               <div className="row" style={{justifyContent:'center', marginTop:16}}>
                 <a href={`mailto:${contact.email}`} className="btn-primary row">
                   <Mail size={16}/> 
-                  {isDark ? (
-                    <span className="terminal-cursor">Email</span>
-                  ) : (
-                    'Email'
-                  )}
+                     Email
                 </a>
-                <a href={contact.linkedin} target="_blank" rel="noreferrer" className="btn-ghost row">
-                  <Globe size={16}/> 
-                  {isDark ? (
-                    <span className="terminal-cursor">LinkedIn</span>
-                  ) : (
-                    'LinkedIn'
-                  )}
+                <a href={contact.linkedin} target="_blank" rel="noreferrer" className="btn-primary row">
+                  <Globe size={16}/>
+                    LinkedIn
                 </a>
               </div>
             </section>
