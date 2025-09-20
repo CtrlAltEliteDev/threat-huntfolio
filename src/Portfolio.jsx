@@ -31,6 +31,9 @@ import {
   Lock,
   Activity
 } from "lucide-react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function Portfolio() {
   const [isDark, setIsDark] = useState(true);
@@ -68,7 +71,38 @@ export default function Portfolio() {
     localStorage.setItem('theme', next ? 'dark' : 'light');
   };
 
-
+  // Slider settings for infinite carousel
+  const sliderSettings = {
+    dots: true,
+    arrows: true,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    speed: 600,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    pauseOnHover: true,
+    swipeToSlide: true,
+    centerMode: false,
+    centerPadding: "0px",
+    variableWidth: true,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 2,
+          centerPadding: "0px",
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: "0px",
+        }
+      }
+    ]
+  };
 
   // PDF download function
   const generateResumePDF = () => {
@@ -208,6 +242,7 @@ export default function Portfolio() {
         className="pill theme-toggle-pill"
         aria-label="Toggle theme"
         style={{ display: "none" }}
+        onClick={toggleTheme}
       >
         {isDark ? <Sun size={16} /> : <Moon size={16} />}{" "}
         {isDark ? "Light mode" : "Dark mode"}
@@ -224,7 +259,7 @@ export default function Portfolio() {
         <Globe size={16} /> linkedin.com/in/pranav-kalidas{" "}
         <ExternalLink size={16} />
       </a>
-      <button className="btn-primary row">
+      <button className="btn-primary row" onClick={generateResumePDF}>
         <Award size={16} />
         <span className="terminal-cursor">Download Resume (PDF)</span>
       </button>
@@ -340,53 +375,57 @@ export default function Portfolio() {
 
             {/* Tools & Technologies */}
             <section className="card mt-8 animate-entrance" style={{animationDelay: '0.7s'}}>
-              <h2 className="row" style={{fontSize:'clamp(18px,3vw,24px)'}}>
-                <Code2 size={20} className="accent"/> 
+              <h2 className="row" style={{fontSize:'clamp(18px,3vw,24px)', marginBottom: '24px'}}>
+                <Code2 size={20} className="accent"/>
                 {isDark ? (
                   <span className="terminal-cursor">Tools & Technologies</span>
                 ) : (
                   'Tools & Technologies'
                 )}
               </h2>
-              <div className="tools-grid mt-6">
-                {tools.map((t, i) => {
-                  const IconComponent = {
-                    Shield: Shield,
-                    Database: Database,
-                    Network: Network,
-                    FileSearch: FileSearch,
-                    Workflow: Workflow,
-                    Globe: Globe,
-                    Monitor: Monitor,
-                    Lock: Lock,
-                    Activity: Activity
-                  }[t.icon] || Code2;
-                  
-                  return (
-                    <div 
-                      key={i} 
-                      className="tool-card animate-entrance" 
-                      style={{
-                        animationDelay: `${0.8 + (i * 0.1)}s`,
-                        '--tool-color': t.color
-                      }}
-                    >
-                      <div className="tool-header">
-                        <div className="tool-icon" style={{backgroundColor: t.color}}>
-                          <IconComponent size={20} />
+
+              <div className="tools-carousel-container">
+                <Slider {...sliderSettings}>
+                  {tools.map((t, i) => {
+                    const IconComponent = {
+                      Shield: Shield,
+                      Database: Database,
+                      Network: Network,
+                      FileSearch: FileSearch,
+                      Workflow: Workflow,
+                      Globe: Globe,
+                      Monitor: Monitor,
+                      Lock: Lock,
+                      Activity: Activity
+                    }[t.icon] || Code2;
+
+                    return (
+                      <div key={i} className="tool-card-wrapper">
+                        <div
+                          className="tool-card animate-entrance"
+                          style={{
+                            animationDelay: `${0.8 + (i * 0.1)}s`,
+                            '--tool-color': t.color
+                          }}
+                        >
+                          <div className="tool-header">
+                            <div className="tool-icon" style={{backgroundColor: t.color}}>
+                              <IconComponent size={20} />
+                            </div>
+                            <div className="tool-category">{t.category}</div>
+                          </div>
+                          <div className="tool-content">
+                            <h3 className="tool-name">{t.name}</h3>
+                            <p className="tool-description">{t.desc}</p>
+                          </div>
+                          <div className="tool-footer">
+                            <div className="tool-accent-line" style={{backgroundColor: t.color}}></div>
+                          </div>
                         </div>
-                        <div className="tool-category">{t.category}</div>
                       </div>
-                      <div className="tool-content">
-                        <h3 className="tool-name">{t.name}</h3>
-                        <p className="tool-description">{t.desc}</p>
-                      </div>
-                      <div className="tool-footer">
-                        <div className="tool-accent-line" style={{backgroundColor: t.color}}></div>
-                      </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </Slider>
               </div>
             </section>
 
