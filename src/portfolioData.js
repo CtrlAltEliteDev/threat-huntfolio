@@ -35,12 +35,12 @@ export const experience = [
 ];
 
 export const certifications = [
-  { abbr: "SC-200", name: "Security Operations Analyst Associate (SC-200)", org: "Microsoft", date: "July 2025" },
-  { abbr: "CEH-P", name: "Certified Ethical Hacker v12 – Practical", org: "EC-Council", date: "April 2025" },
-  { abbr: "CEH", name: "Certified Ethical Hacker v12", org: "EC-Council", date: "August 2024" },
-  { abbr: "NSE1", name: "Certified Fundamentals Cybersecurity", org: "Fortinet", date: "October 2024" },
-  { abbr: "NPTEL", name: "Ethical Hacking", org: "IIT Kharagpur", date: "November 2023" },
-  { abbr: "THM", name: "Active Learner on TryHackMe", org: "Self-paced", date: "Since Feb 2024" },
+  { abbr: "SC-200", name: "Security Operations Analyst Associate (SC-200)", org: "Microsoft", date: "July 2025", url: "" },
+  { abbr: "CEH-P", name: "Certified Ethical Hacker v12 – Practical", org: "EC-Council", date: "April 2025", url: "" },
+  { abbr: "CEH", name: "Certified Ethical Hacker v12", org: "EC-Council", date: "August 2024", url: "" },
+  { abbr: "NSE1", name: "Certified Fundamentals Cybersecurity", org: "Fortinet", date: "October 2024", url: "" },
+  { abbr: "NPTEL", name: "Ethical Hacking", org: "IIT Kharagpur", date: "November 2023", url: "" },
+  { abbr: "THM", name: "Active Learner on TryHackMe", org: "Self-paced", date: "Since Feb 2024", url: "" },
 ];
 
 export const skills = [
