@@ -315,17 +315,12 @@ button {
 .header-left { 
   width: 100%;
   display: flex; 
-  gap: 12px; 
+  gap: 6px; 
   justify-content: space-between;
   align-items: flex-start;
   flex: 1;
 }
 
-@media (min-width: 640px) {
-  .header-left {
-    gap: 16px;
-  }
-}
 
 .links { 
   display: flex; 

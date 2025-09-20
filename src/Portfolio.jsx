@@ -222,12 +222,12 @@ export default function Portfolio() {
       }}
     >
       <div>
-        <h1 style={{ fontSize: "clamp(28px, 4vw, 36px)" }}>
+        <h1 style={{ fontSize: "clamp(28px, 4vw, 60px)" }}>
           Pranav Kalidas <span className="accent">✦</span>
         </h1>
       </div>
       <div>
-        <p className="row muted2" style={{ marginTop: 6 }}>
+        <p className="row muted2" style={{marginTop: 10, marginBottom: 0 }}>
           <Shield size={16} /> Security Analyst
         </p>
       </div>
