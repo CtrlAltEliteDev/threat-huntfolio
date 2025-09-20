@@ -25,7 +25,7 @@ export const experience = [
   {
     role: "Software Developer Intern",
     company: "Netmeds (Reliance Retail)",
-    location: "Remote / Onsite",
+    location: "Chennai",
     start: "Oct 2022",
     end: "Sep 2023",
     bullets: [
@@ -79,7 +79,7 @@ export const tools = [
 ];
 
 export const incidents = [
-  { date: "2025-08-10", title: "Suspicious OAuth Consent Phish", severity: "High", tags: ["Email", "Phishing", "User Report"], notes: "Quarantined message, reset creds, reviewed app consent logs." },
+  { date: "2025-08-10", title: "Lumma Stealer using Fake Captcha", severity: "Critical", tags: ["Initial Access","Credential Stealer","MSHTA.exe"], notes: "Quarantined message, reset creds, reviewed app consent logs." },
   { date: "2025-07-22", title: "Beaconing from Host EU-043", severity: "Medium", tags: ["EDR", "C2"], notes: "Isolated device via XDR, collected timeline, no lateral movement observed." },
   { date: "2025-07-03", title: "Excessive MFA Prompts", severity: "Low", tags: ["Account", "Brute Force"], notes: "Enabled number match, blocked source IP ranges, user education." },
 ];
