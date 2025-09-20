@@ -725,6 +725,7 @@ ul li::before {
 }
 
 .experience-header {
+  align-items:flex-start;
   justify-content: space-between;
 }
 
@@ -975,6 +976,199 @@ ul li::before {
   justify-content: center;
   color: var(--amber);
   flex-shrink: 0;
+}
+
+/* Severity Chip Styling */
+.severity-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: var(--font-primary);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.severity-critical {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: white;
+  border: 1px solid #dc2626;
+}
+
+.severity-high {
+  background: linear-gradient(135deg, #ea580c, #c2410c);
+  color: white;
+  border: 1px solid #ea580c;
+}
+
+.severity-medium {
+  background: linear-gradient(135deg, #d97706, #b45309);
+  color: white;
+  border: 1px solid #d97706;
+}
+
+.severity-low {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  color: white;
+  border: 1px solid #16a34a;
+}
+
+.severity-info {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  border: 1px solid #2563eb;
+}
+
+/* Dark theme severity chips */
+[data-theme="dark"] .severity-critical {
+  background: linear-gradient(135deg, #ff0000, #cc0000);
+  border-color: #ff0000;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .severity-high {
+  background: linear-gradient(135deg, #ff6600, #cc5200);
+  border-color: #ff6600;
+  box-shadow: 0 0 15px rgba(255, 102, 0, 0.3);
+}
+
+[data-theme="dark"] .severity-medium {
+  background: linear-gradient(135deg, #ffaa00, #cc8800);
+  border-color: #ffaa00;
+  box-shadow: 0 0 15px rgba(255, 170, 0, 0.3);
+}
+
+[data-theme="dark"] .severity-low {
+  background: linear-gradient(135deg, #00ff00, #00cc00);
+  border-color: #00ff00;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+}
+
+[data-theme="dark"] .severity-info {
+  background: linear-gradient(135deg, #00aaff, #0088cc);
+  border-color: #00aaff;
+  box-shadow: 0 0 15px rgba(0, 170, 255, 0.3);
+}
+
+/* Clickable Certification Cards */
+.certification-card-clickable {
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid var(--border);
+}
+
+.certification-card-clickable:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+  border-color: var(--amber);
+}
+
+.certification-card-clickable::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, transparent, rgba(245, 158, 11, 0.05));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: inherit;
+}
+
+.certification-card-clickable:hover::before {
+  opacity: 1;
+}
+
+.certification-image-container {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.certification-image-container:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+.certification-name {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.certification-card-clickable:hover .certification-name {
+  color: var(--amber);
+  text-shadow: 0 0 8px rgba(245, 158, 11, 0.3);
+}
+
+.certification-external-link {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.certification-card-clickable:hover .certification-external-link {
+  opacity: 1;
+  transform: translateX(0);
+  background: var(--amber);
+  color: white;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+}
+
+.certification-card-clickable:hover .certification-external-link .accent {
+  color: white;
+}
+
+/* Dark theme certification cards */
+[data-theme="dark"] .certification-card-clickable {
+  border-color: rgba(0, 255, 0, 0.3);
+}
+
+[data-theme="dark"] .certification-card-clickable:hover {
+  border-color: #00ff00;
+  box-shadow: 
+    0 12px 28px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(0, 255, 0, 0.2);
+}
+
+[data-theme="dark"] .certification-card-clickable::before {
+  background: linear-gradient(135deg, transparent, rgba(0, 255, 0, 0.05));
+}
+
+[data-theme="dark"] .certification-image-container:hover {
+  box-shadow: 0 4px 12px rgba(0, 255, 0, 0.3);
+}
+
+[data-theme="dark"] .certification-card-clickable:hover .certification-name {
+  color: #00ff00;
+  text-shadow: 0 0 8px rgba(0, 255, 0, 0.3);
+}
+
+[data-theme="dark"] .certification-external-link {
+  background: rgba(0, 255, 0, 0.1);
+  border-color: rgba(0, 255, 0, 0.3);
+}
+
+[data-theme="dark"] .certification-card-clickable:hover .certification-external-link {
+  background: #00ff00;
+  color: #000;
+  box-shadow: 0 4px 12px rgba(0, 255, 0, 0.4);
+}
+
+[data-theme="dark"] .certification-card-clickable:hover .certification-external-link .accent {
+  color: #000;
 }
 
 /* Incident Details Styling */

@@ -224,33 +224,29 @@ export default function Portfolio() {
               <h2 className="row" style={{fontSize:'clamp(18px,3vw,24px)'}}><Award size={20} className="accent"/> Certifications & Badge Wall</h2>
               <div className="grid-tiles mt-6">
                 {certifications.map((c, i) => (
-                  <div key={i} className="card animate-entrance" style={{display:'flex', alignItems:'center', gap:12, animationDelay: `${0.6 + (i * 0.1)}s`}}>
-                    <a 
-                      href={c.url.startsWith('http') ? c.url : `https://${c.url}`} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      style={{textDecoration:'none', color:'inherit'}}
-                    >
-                      <div style={{height:42, width:40, borderRadius:999, display:'grid', placeItems:'center', overflow:'hidden', cursor:'pointer'}}>
-                        <img 
-                          src={c.image} 
-                          alt={c.org} 
-                          style={{width:'100%', height:'100%', objectFit:'cover', borderRadius:'50%'}}
-                        />
-                      </div>
-                    </a>
-                    <a 
-                      href={c.url.startsWith('http') ? c.url : `https://${c.url}`} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      style={{textDecoration:'none', color:'inherit', flex:1}}
-                    >
-                      <div style={{textAlign:'left'}}>
-                        <div style={{fontWeight:600, cursor:'pointer'}}>{c.name}</div>
-                        <div className="muted" style={{fontSize:12}}>{c.org} • {c.date}</div>
-                      </div>
-                    </a>
-                  </div>
+                  <a 
+                    key={i} 
+                    href={c.url.startsWith('http') ? c.url : `https://${c.url}`} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="card animate-entrance certification-card-clickable" 
+                    style={{display:'flex', alignItems:'center', gap:12, animationDelay: `${0.6 + (i * 0.1)}s`, textDecoration:'none', color:'inherit'}}
+                  >
+                    <div className="certification-image-container" style={{height:42, width:40, borderRadius:999, display:'grid', placeItems:'center', overflow:'hidden', cursor:'pointer'}}>
+                      <img 
+                        src={c.image} 
+                        alt={c.org} 
+                        style={{width:'100%', height:'100%', objectFit:'cover', borderRadius:'50%'}}
+                      />
+                    </div>
+                    <div style={{textAlign:'left', flex:1}}>
+                      <div className="certification-name" style={{fontWeight:600, cursor:'pointer'}}>{c.name}</div>
+                      <div className="muted" style={{fontSize:12}}>{c.org} • {c.date}</div>
+                    </div>
+                    <div className="certification-external-link">
+                      <ExternalLink size={16} className="accent"/>
+                    </div>
+                  </a>
                 ))}
               </div>
             </section>
@@ -281,10 +277,11 @@ export default function Portfolio() {
                       <span className="dot" />
                       <div className="row" style={{justifyContent:'space-between'}}>
                         <div style={{fontWeight:600}}>{it.title}</div>
-                        <span className="chip"><Clock size={12}/> {new Date(it.date).toLocaleDateString()}</span>
+                        <span className={`severity-chip severity-${it.severity.toLowerCase()}`}>
+                          {it.severity}
+                        </span>
                       </div>
                       <div className="row" style={{gap:8, marginTop:8, flexWrap:'wrap'}}>
-                        <span className="chip">Severity: {it.severity}</span>
                         {it.tags.map(t => <span key={t} className="chip">{t}</span>)}
                       </div>
                       <p className="muted2" style={{marginTop:8, fontSize:14}}>{it.notes}</p>
@@ -337,7 +334,6 @@ export default function Portfolio() {
                     <div className="education-details">
                       <p className="focus-area">{education.focus}</p>
                       <div className="education-timeline">
-                        <div className="timeline-dot"></div>
                         <div className="timeline-content">
                           <span className="timeline-period">{education.start} – {education.end}</span>
                           <div className="cgpa-highlight">{education.cgpa}</div>

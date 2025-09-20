@@ -99,7 +99,6 @@ export const tools = [
 
 export const incidents = [
   { 
-    date: "2025-08-10", 
     title: "Lumma Stealer using Fake Captcha", 
     severity: "Critical", 
     tags: ["Initial Access","Credential Stealer","MSHTA.exe"], 
@@ -114,7 +113,6 @@ export const incidents = [
     howIResponded: "Engaged service desk to initiate password reset, advised user to set a strong password, and proposed stronger password policy with reduced expiry duration.",
   },
   { 
-    date: "2025-07-03", 
     title: "Excessive MFA Prompts", 
     severity: "Low", 
     tags: ["Account", "Brute Force"], 
