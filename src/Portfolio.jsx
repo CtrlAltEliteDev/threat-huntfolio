@@ -476,7 +476,7 @@ export default function Portfolio() {
             <section className="card mt-8 animate-entrance" style={{animationDelay: '0.1s'}}>
               <h2 className="row" style={{fontSize:'clamp(18px,3vw,24px)'}}>
                 <Shield size={20} className="accent"/> 
-                Security Incident & Response Log
+                Security Incident & Response Journal
               </h2>
               <div className="timeline mt-6">
                 <div className="space-y">
@@ -641,7 +641,7 @@ export default function Portfolio() {
               <p className="muted2" style={{marginTop:8, fontFamily: isDark ? 'Courier New, monospace' : 'inherit', textAlign: 'center'}}>
                 {isDark ? (
                   <>
-                    <span style={{color: '#00ff00'}}>root@security:~$ </span>Open to security analyst roles, SOC operations, and threat detection projects.<span className="terminal-cursor"></span>
+                    <span style={{color: '#00ff00'}}>root@security:~$ </span>&nbsp;Open to security analyst roles, SOC operations, and threat detection projects.<span className="terminal-cursor"></span>
                   </>
                 ) : (
                   'Open to security analyst roles, SOC operations, and threat detection projects.'
