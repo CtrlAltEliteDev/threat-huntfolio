@@ -187,10 +187,19 @@ export default function Portfolio() {
                   {[...experience].map((exp, idx) => (
                     <div key={idx} className="card experience-card animate-entrance" style={{animationDelay: `${0.3 + (idx * 0.1)}s`}}>
                       <div className="row experience-header">
-                        <div>
-                          <div className="role-title">{exp.role}</div>
-                          <div className="muted2">{exp.company}</div>
-                          <div className="muted location-text">{exp.location}</div>
+                        <div className="experience-company-info">
+                          <div className="experience-logo-container">
+                            <img 
+                              src={exp.logo} 
+                              alt={`${exp.company} logo`} 
+                              className="experience-logo"
+                            />
+                          </div>
+                          <div className="experience-text-info">
+                            <div className="role-title">{exp.role}</div>
+                            <div className="muted2">{exp.company}</div>
+                            <div className="muted location-text">{exp.location}</div>
+                          </div>
                         </div>
                         <div className="chip">{exp.start} – {exp.end}</div>
                       </div>
