@@ -29,7 +29,7 @@ export const experience = [
     location: "Chennai",
     start: "Oct 2022",
     end: "Sep 2023",
-    logo: "/Netmeds.jpg",
+    logo: "/Netmeds.png",
     bullets: [
       "Implemented Java business logic for inbound/outbound inventory flow.",
       "Partnered with cross-functional teams to stabilize stock management.",
@@ -38,10 +38,10 @@ export const experience = [
 ];
 
 export const certifications = [
-  { abbr: "SC-200", name: "Security Operations Analyst Associate (SC-200)", org: "Microsoft", date: "July 2025", url: "https://learn.microsoft.com/api/credentials/share/en-us/PranavKalidas-0465/EC50D42E72C423D5?sharingId=698376E8CB7702F2", image: "/Microsoft.png" },
-  { abbr: "CEH-Practical", name: "Certified Ethical Hacker v12 – Practical", org: "EC-Council", date: "April 2025", url: "https://aspen.eccouncil.org/VerifyBadge?type=certification&a=o2jPBvIo2t5MxoNABIYpODJoz1P9SBs5LqWYLx8PVTo=", image: "/CEH.png" },
-  { abbr: "CEH", name: "Certified Ethical Hacker v12", org: "EC-Council", date: "August 2024", url: "https://aspen.eccouncil.org/VerifyBadge?type=certification&a=HLHJ6cwIhgyNHkfjTRD7IT2/lnmHgCqFdGTODBqSwnA=", image: "/CEH.png" },
-  { abbr: "NSE-2", name: "Certified Fundamentals Cybersecurity", org: "Fortinet", date: "October 2024", url: "https://www.credly.com/badges/5fb71cd2-e98e-4bef-9b29-d30159369ca5/public_url", image: "/Fortinet.png" },
+  { abbr: "SC-200", name: "Security Operations Analyst Associate (SC-200)", org: "Microsoft", date: "July 2025 - July 2026", url: "https://learn.microsoft.com/api/credentials/share/en-us/PranavKalidas-0465/EC50D42E72C423D5?sharingId=698376E8CB7702F2", image: "/Microsoft.png" },
+  { abbr: "CEH-Practical", name: "Certified Ethical Hacker v12 – Practical", org: "EC-Council", date: "April 2025 - April 2026", url: "https://aspen.eccouncil.org/VerifyBadge?type=certification&a=o2jPBvIo2t5MxoNABIYpODJoz1P9SBs5LqWYLx8PVTo=", image: "/CEH.png" },
+  { abbr: "CEH", name: "Certified Ethical Hacker v12", org: "EC-Council", date: "August 2024 - August 2027", url: "https://aspen.eccouncil.org/VerifyBadge?type=certification&a=HLHJ6cwIhgyNHkfjTRD7IT2/lnmHgCqFdGTODBqSwnA=", image: "/CEH.png" },
+  { abbr: "NSE-2", name: "Certified Fundamentals Cybersecurity", org: "Fortinet", date: "October 2024 - October 2026", url: "https://www.credly.com/badges/5fb71cd2-e98e-4bef-9b29-d30159369ca5/public_url", image: "/Fortinet.png" },
   { abbr: "NPTEL", name: "Ethical Hacking", org: "NPTEL (IIT Kharagpur)", date: "November 2023", url: "nptel.ac.in/noc/E_Certificate/NPTEL23CS75S73320006020301625", image: "/NPTEL.png" },
   { abbr: "THM", name: "Active Learner on TryHackMe", org: "Self-paced", date: "Since Feb 2024", url: "https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1076369", image: "/tryhackme.jpg" },
 ];
@@ -102,16 +102,16 @@ export const tools = [
     color: "#0066cc"
   },
   { 
-    name: "Cisco Umbrella Proxy", 
+    name: "Cisco Umbrella", 
     desc: "User browsing behaviour, identifying referral pages even when not explicitly logged in SIEM",
-    category: "Web Traffic Analysis",
+    category: "Secure Web Gateway",
     icon: "Network",
     color: "#1ba1e2"
   },
   { 
     name: "Cisco Secure Malware Analytics", 
     desc: "Phishing domain extraction, malware process deconstruction, post-compromise behavior mapping, and threat artifact enrichment",
-    category: "Sandbox Analysis",
+    category: "Sandbox",
     icon: "FileSearch",
     color: "#1ba1e2"
   },
@@ -125,7 +125,7 @@ export const tools = [
   { 
     name: "OSINT Tools", 
     desc: "VirusTotal, IBM X-Force, Cisco Talos, CrowdSec, Scamalytics, URLScan.io, and Whois for threat intelligence and domain analysis",
-    category: "Domain & IP Enri",
+    category: "Domain & IP Enrichment",
     icon: "Globe",
     color: "#28a745"
   }
@@ -133,7 +133,7 @@ export const tools = [
 
 export const incidents = [
   { 
-    title: "Lumma Stealer using Fake Captcha", 
+    title: "Lumma Stealer Infection Vector: Fake Captcha as Initial Access", 
     severity: "Critical", 
     tags: ["Initial Access","Credential Stealer","MSHTA.exe"], 
     whatHappened: "User was redirected to a fake CAPTCHA page that copied a malicious mshta.exe command to clipboard. The user unknowingly executed it via Win+R, triggering the download of Lumma Stealer malware.",

@@ -122,39 +122,115 @@ export default function Portfolio() {
 
           {/* Header */}
           <header className="container header">
-            <div className="header-flex">
-              <div className="header-left">
-                <div>
-                  <h1 style={{fontSize: 'clamp(28px, 4vw, 36px)'}}>
-                    <>Pranav Kalidas <span className="accent">✦</span></>
-                  </h1>
-                  <p className="row muted2" style={{marginTop:6}}>
-                    <Shield size={16}/> Security Analyst
-                  </p>
-                  <p className="row muted" style={{marginTop:6}}>
-                    <MapPin size={16}/> Kozhikode, Kerala — 673522
-                  </p>
-                </div>
-                <div className="avatar">
-                  <img src="/SOCAnalyst.jpeg" alt="Pranav Kalidas" className="avatar-image" />
-                </div>
-              </div>
-              <div className="links">
-                <button onClick={toggleTheme} className="pill theme-toggle-pill" aria-label="Toggle theme" style={{display: 'none'}}>
-                  {isDark ? <Sun size={16}/> : <Moon size={16}/>} {isDark ? 'Light mode' : 'Dark mode'}
-                </button>
-                <a href="mailto:kalidas.pranav@gmail.com" className="pill"><Mail size={16}/> kalidas.pranav@gmail.com</a>
-                <a href="https://linkedin.com/in/pranav-kalidas" target="_blank" rel="noreferrer" className="pill"><Globe size={16}/> linkedin.com/in/pranav-kalidas <ExternalLink size={16}/></a>
-                <button onClick={generateResumePDF} className="btn-primary row">
-                  <Award size={16}/> 
-                  {isDark ? (
-                    <span className="terminal-cursor">Download Resume (PDF)</span>
-                  ) : (
-                    'Download Resume (PDF)'
-                  )}
-                </button>
-              </div>
-            </div>
+<div
+  className="header-flex"
+  style={{
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    flexFlow: "row-reverse wrap",
+  }}
+>
+  <div
+    className="avatar"
+    style={{
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      maxWidth: 180,        // Increased size
+      width: 180,           // Increased size
+      height: 180,          // Increased size
+      marginRight: 32,
+      flexShrink: 0,
+    }}
+  >
+    <img
+      alt="Pranav Kalidas"
+      className="avatar-image"
+      src="/SOCAnalyst.jpeg"
+      style={{
+        width: "100%",
+        height: "100%",
+        objectFit: "cover",
+        borderRadius: "50%",
+      }}
+    />
+  </div>
+  <div
+    style={{
+      display: "flex",
+      alignItems: "flex-start",
+      justifyContent: "space-between",
+      flex: "1 1 0%",
+      minWidth: 0,
+      flexDirection: "column",
+    }}
+  >
+    <div
+      className="header-left"
+      style={{
+        flex: "1 1 0%",
+        textAlign: "left",
+        minWidth: 0,
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
+      <div>
+        <h1 style={{ fontSize: "clamp(28px, 4vw, 36px)" }}>
+          Pranav Kalidas <span className="accent">✦</span>
+        </h1>
+      </div>
+      <div>
+        <p className="row muted2" style={{ marginTop: 6 }}>
+          <Shield size={16} /> Security Analyst
+        </p>
+      </div>
+      <div>
+        <p className="row muted" style={{ marginTop: 6 }}>
+          <MapPin size={16} /> Kozhikode, Kerala — 673522
+        </p>
+      </div>
+    </div>
+    <div
+      className="links"
+      style={{
+        marginLeft: 0,
+        width: "100%",
+        display: "flex",
+        alignItems: "flex-start",
+        flexWrap: "wrap",
+        gap: 12,
+      }}
+    >
+      <button
+        className="pill theme-toggle-pill"
+        aria-label="Toggle theme"
+        style={{ display: "none" }}
+      >
+        {isDark ? <Sun size={16} /> : <Moon size={16} />}{" "}
+        {isDark ? "Light mode" : "Dark mode"}
+      </button>
+      <a href="mailto:kalidas.pranav@gmail.com" className="pill">
+        <Mail size={16} /> kalidas.pranav@gmail.com
+      </a>
+      <a
+        href="https://linkedin.com/in/pranav-kalidas"
+        target="_blank"
+        rel="noreferrer"
+        className="pill"
+      >
+        <Globe size={16} /> linkedin.com/in/pranav-kalidas{" "}
+        <ExternalLink size={16} />
+      </a>
+      <button className="btn-primary row">
+        <Award size={16} />
+        <span className="terminal-cursor">Download Resume (PDF)</span>
+      </button>
+    </div>
+  </div>
+</div>
           </header>
 
           {/* Summary */}

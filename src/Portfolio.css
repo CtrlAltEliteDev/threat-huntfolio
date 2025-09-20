@@ -337,7 +337,7 @@ button {
 @media (min-width: 640px) {
   .links {
     gap: 12px;
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
 }
 
