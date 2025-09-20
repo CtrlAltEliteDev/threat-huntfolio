@@ -12,22 +12,24 @@ import {
 } from "./portfolioData";
 import {
   Mail,
-  Linkedin,
   MapPin,
   Shield,
   Code2,
   Award,
   GraduationCap,
   Briefcase,
-  ChevronRight,
   ExternalLink,
-  Sparkles,
   Sun,
   Moon,
-  Clock,
-  Terminal,
   Zap,
-  Eye
+  Database,
+  Network,
+  FileSearch,
+  Workflow,
+  Globe,
+  Monitor,
+  Lock,
+  Activity
 } from "lucide-react";
 
 export default function Portfolio() {
@@ -142,7 +144,7 @@ export default function Portfolio() {
                   {isDark ? <Sun size={16}/> : <Moon size={16}/>} {isDark ? 'Light mode' : 'Dark mode'}
                 </button>
                 <a href="mailto:kalidas.pranav@gmail.com" className="pill"><Mail size={16}/> kalidas.pranav@gmail.com</a>
-                <a href="https://linkedin.com/in/pranav-kalidas" target="_blank" rel="noreferrer" className="pill"><Linkedin size={16}/> linkedin.com/in/pranav-kalidas <ExternalLink size={16}/></a>
+                <a href="https://linkedin.com/in/pranav-kalidas" target="_blank" rel="noreferrer" className="pill"><Globe size={16}/> linkedin.com/in/pranav-kalidas <ExternalLink size={16}/></a>
                 <button onClick={generateResumePDF} className="btn-primary row">
                   <Award size={16}/> 
                   {isDark ? (
@@ -253,14 +255,53 @@ export default function Portfolio() {
 
             {/* Tools & Technologies */}
             <section className="card mt-8 animate-entrance" style={{animationDelay: '0.7s'}}>
-              <h2 className="row" style={{fontSize:'clamp(18px,3vw,24px)'}}><Code2 size={20} className="accent"/> Tools & Technologies</h2>
-              <div className="grid-tiles-3 mt-6">
-                {tools.map((t, i) => (
-                  <div key={i} className="card animate-entrance" style={{animationDelay: `${0.8 + (i * 0.1)}s`}}>
-                    <div style={{fontWeight:600}}>{t.name}</div>
-                    <div className="muted" style={{fontSize:14, marginTop:6}}>{t.desc}</div>
-                  </div>
-                ))}
+              <h2 className="row" style={{fontSize:'clamp(18px,3vw,24px)'}}>
+                <Code2 size={20} className="accent"/> 
+                {isDark ? (
+                  <span className="terminal-cursor">Tools & Technologies</span>
+                ) : (
+                  'Tools & Technologies'
+                )}
+              </h2>
+              <div className="tools-grid mt-6">
+                {tools.map((t, i) => {
+                  const IconComponent = {
+                    Shield: Shield,
+                    Database: Database,
+                    Network: Network,
+                    FileSearch: FileSearch,
+                    Workflow: Workflow,
+                    Globe: Globe,
+                    Monitor: Monitor,
+                    Lock: Lock,
+                    Activity: Activity
+                  }[t.icon] || Code2;
+                  
+                  return (
+                    <div 
+                      key={i} 
+                      className="tool-card animate-entrance" 
+                      style={{
+                        animationDelay: `${0.8 + (i * 0.1)}s`,
+                        '--tool-color': t.color
+                      }}
+                    >
+                      <div className="tool-header">
+                        <div className="tool-icon" style={{backgroundColor: t.color}}>
+                          <IconComponent size={20} />
+                        </div>
+                        <div className="tool-category">{t.category}</div>
+                      </div>
+                      <div className="tool-content">
+                        <h3 className="tool-name">{t.name}</h3>
+                        <p className="tool-description">{t.desc}</p>
+                      </div>
+                      <div className="tool-footer">
+                        <div className="tool-accent-line" style={{backgroundColor: t.color}}></div>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </section>
 
@@ -393,7 +434,7 @@ export default function Portfolio() {
                   )}
                 </a>
                 <a href={contact.linkedin} target="_blank" rel="noreferrer" className="btn-ghost row">
-                  <Linkedin size={16}/> 
+                  <Globe size={16}/> 
                   {isDark ? (
                     <span className="terminal-cursor">LinkedIn</span>
                   ) : (

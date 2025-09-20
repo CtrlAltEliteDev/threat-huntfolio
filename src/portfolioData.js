@@ -88,13 +88,48 @@ export const achievements = [
 ];
 
 export const tools = [
-  { name: "Microsoft Defender XDR", desc: "Threat hunting with KQL, device timeline analysis, email triage, file and software inspection, and CVE vulnerability detection" },
-  { name: "IBM QRadar", desc: "Log correlation, traffic flow analysis, attack context decoding, IoC triaging, threat visualization" },
-  { name: "Cisco Umbrella Proxy", desc: "User browing behaviour, identifying referral pages even when not explicitly logged in SIEM" },
-  { name: "Cisco Secure Malware Analytics", desc: "Phishing domain extraction, malware process deconstruction, post-compromise behavior mapping, and threat artifact enrichment" },
-  { name: "Fortinet FortiSOAR", desc: "Workflow orchestration, playbook automation, alert/incident documentation, asset management" },
-  { name: "OSINT", desc: "VirusTotal, IBM X-Force, Cisco Talos, CrowdSec, Scamalytics, URLScan.io, and Whois for threat intelligence and domain analysis" }
-  
+  { 
+    name: "Microsoft Defender XDR", 
+    desc: "Threat hunting with KQL, device timeline analysis, email triage, file and software inspection, and CVE vulnerability detection",
+    category: "SIEM/XDR",
+    icon: "Shield",
+    color: "#0078d4"
+  },
+  { 
+    name: "IBM QRadar", 
+    desc: "Log correlation, traffic flow analysis, attack context decoding, IoC triaging, threat visualization",
+    category: "SIEM",
+    icon: "Database",
+    color: "#0066cc"
+  },
+  { 
+    name: "Cisco Umbrella Proxy", 
+    desc: "User browsing behaviour, identifying referral pages even when not explicitly logged in SIEM",
+    category: "Network Security",
+    icon: "Network",
+    color: "#1ba1e2"
+  },
+  { 
+    name: "Cisco Secure Malware Analytics", 
+    desc: "Phishing domain extraction, malware process deconstruction, post-compromise behavior mapping, and threat artifact enrichment",
+    category: "Malware Analysis",
+    icon: "FileSearch",
+    color: "#1ba1e2"
+  },
+  { 
+    name: "Fortinet FortiSOAR", 
+    desc: "Workflow orchestration, playbook automation, alert/incident documentation, asset management",
+    category: "SOAR",
+    icon: "Workflow",
+    color: "#d73027"
+  },
+  { 
+    name: "OSINT Tools", 
+    desc: "VirusTotal, IBM X-Force, Cisco Talos, CrowdSec, Scamalytics, URLScan.io, and Whois for threat intelligence and domain analysis",
+    category: "OSINT",
+    icon: "Globe",
+    color: "#28a745"
+  }
 ];
 
 export const incidents = [
