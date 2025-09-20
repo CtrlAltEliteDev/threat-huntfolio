@@ -43,12 +43,17 @@ export default function Portfolio() {
   const [isDark, setIsDark] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
   const [expandedIncidents, setExpandedIncidents] = useState({});
+  const [showAllCertifications, setShowAllCertifications] = useState(false);
 
   const toggleIncidentDetails = (incidentTitle) => {
     setExpandedIncidents(prev => ({
       ...prev,
       [incidentTitle]: !prev[incidentTitle]
     }));
+  };
+
+  const toggleCertifications = () => {
+    setShowAllCertifications(!showAllCertifications);
   };
 
   useEffect(() => {
@@ -377,7 +382,7 @@ export default function Portfolio() {
             </section>
 
             {/* Certifications Badge Wall */}
-            <section className="card mt-8 animate-entrance certifications-section">
+            <section className={`card mt-8 animate-entrance certifications-section ${showAllCertifications ? 'show-all' : ''}`}>
               <h2 className="row section-title"><Award size={20} className="accent"/> Certifications & Badge Wall</h2>
               <div className="grid-tiles mt-6">
                 {certifications.map((c, i) => (
@@ -386,7 +391,7 @@ export default function Portfolio() {
                     href={c.url.startsWith('http') ? c.url : `https://${c.url}`} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="card animate-entrance certification-card-clickable certification-card"
+                    className={`card animate-entrance certification-card-clickable certification-card ${i >= 3 ? 'certification-hidden' : ''}`}
                   >
                     <div className="certification-image-container">
                       <img 
@@ -404,6 +409,19 @@ export default function Portfolio() {
                     </div>
                   </a>
                 ))}
+              </div>
+              
+              {/* Mobile Certifications Toggle */}
+              <div className="certifications-mobile-toggle">
+                <button 
+                  onClick={toggleCertifications}
+                  className="certifications-toggle-btn"
+                >
+                  <ChevronDown 
+                    size={16} 
+                    className={`toggle-icon ${showAllCertifications ? 'rotated' : ''}`}
+                  />
+                </button>
               </div>
             </section>
 

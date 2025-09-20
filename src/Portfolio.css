@@ -2950,6 +2950,11 @@ footer {
   display: none;
 }
 
+/* Mobile Certifications Toggle - Hidden by default */
+.certifications-mobile-toggle {
+  display: none;
+}
+
 /* Mobile Skills Cards */
 .skill-card {
   background: var(--card);
@@ -3242,6 +3247,48 @@ footer {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  /* Mobile Certifications Toggle */
+  .certifications-mobile-toggle {
+    display: block;
+  }
+
+  .certifications-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 16px;
+    padding: 8px;
+    background: transparent;
+    border: none;
+    color: var(--amber);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+  }
+
+  .certifications-toggle-btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .toggle-icon {
+    transition: transform 0.3s ease;
+  }
+
+  .toggle-icon.rotated {
+    transform: rotate(180deg);
+  }
+
+  /* Hide certifications beyond the first 3 on mobile by default */
+  .certification-hidden {
+    display: none;
+  }
+
+  /* Show all certifications when toggled */
+  .certifications-section.show-all .certification-hidden {
+    display: block;
   }
 
   .chip{
