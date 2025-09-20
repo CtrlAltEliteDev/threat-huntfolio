@@ -10,11 +10,12 @@ export const contact = {
 export const experience = [
   {
     role: "Security Analyst",
-    company: "Tech Mahindra (MSSP for SES Telecom)",
+    company: "Tech Mahindra",
     location: "Bengaluru",
     start: "Dec 2023",
     end: "Present",
     bullets: [
+      "SOC Analyst as a Managed Security Service Provider (MSSP) supporting SES Telecom, a leading European telecom firm with 5000+ employees",
       "Performed alert triage using KQL across all shifts with due diligence.",
       "Initiated playbooks swiftly and escalated critical alerts when needed.",
       "Collaborated with L2/L3 to expedite resolutions and meet SLAs.",
@@ -35,22 +36,21 @@ export const experience = [
 ];
 
 export const certifications = [
-  { abbr: "SC-200", name: "Security Operations Analyst Associate (SC-200)", org: "Microsoft", date: "July 2025", url: "" },
-  { abbr: "CEH-P", name: "Certified Ethical Hacker v12 – Practical", org: "EC-Council", date: "April 2025", url: "" },
-  { abbr: "CEH", name: "Certified Ethical Hacker v12", org: "EC-Council", date: "August 2024", url: "" },
-  { abbr: "NSE1", name: "Certified Fundamentals Cybersecurity", org: "Fortinet", date: "October 2024", url: "" },
-  { abbr: "NPTEL", name: "Ethical Hacking", org: "IIT Kharagpur", date: "November 2023", url: "" },
-  { abbr: "THM", name: "Active Learner on TryHackMe", org: "Self-paced", date: "Since Feb 2024", url: "" },
+  { abbr: "SC-200", name: "Security Operations Analyst Associate (SC-200)", org: "Microsoft", date: "July 2025", url: "https://learn.microsoft.com/api/credentials/share/en-us/PranavKalidas-0465/EC50D42E72C423D5?sharingId=698376E8CB7702F2" },
+  { abbr: "CEH-Practical", name: "Certified Ethical Hacker v12 – Practical", org: "EC-Council", date: "April 2025", url: "https://aspen.eccouncil.org/VerifyBadge?type=certification&a=o2jPBvIo2t5MxoNABIYpODJoz1P9SBs5LqWYLx8PVTo=" },
+  { abbr: "CEH", name: "Certified Ethical Hacker v12", org: "EC-Council", date: "August 2024", url: "https://aspen.eccouncil.org/VerifyBadge?type=certification&a=HLHJ6cwIhgyNHkfjTRD7IT2/lnmHgCqFdGTODBqSwnA=" },
+  { abbr: "NSE-2", name: "Certified Fundamentals Cybersecurity", org: "Fortinet", date: "October 2024", url: "https://www.credly.com/badges/5fb71cd2-e98e-4bef-9b29-d30159369ca5/public_url" },
+  { abbr: "NPTEL", name: "Ethical Hacking", org: "IIT Kharagpur", date: "November 2023", url: "nptel.ac.in/noc/E_Certificate/NPTEL23CS75S73320006020301625" },
+  { abbr: "THM", name: "Active Learner on TryHackMe", org: "Self-paced", date: "Since Feb 2024", url: "https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1076369" },
 ];
 
 export const skills = [
   "KQL triage",
   "Email analysis",
   "OSINT collection",
-  "Incident response",
+  "Incident Management",
   "Playbook execution",
-  "Java",
-  "Bash",
+  "Scripting",
   "Communication",
 ];
 
