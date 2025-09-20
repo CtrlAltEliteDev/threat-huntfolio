@@ -74,8 +74,8 @@ export const skills = [
 
 export const education = {
   degree: "B.E. in Computer Science",
-  focus: "Cryptography, Cybersecurity & Computer Networks",
-  uni: "VTU",
+  focus: "Cryptography & Cybersecurity",
+  uni: "Alvas Institute of Engineering and Technology, VTU",
   cgpa: "8.7 CGPA",
   start: "Aug 2019",
   end: "May 2023",
@@ -88,12 +88,13 @@ export const achievements = [
 ];
 
 export const tools = [
-  { name: "Microsoft Sentinel", desc: "Threat hunting with KQL, device timeline, email triage" },
-  { name: "Microsoft Defender XDR", desc: "Endpoint signals, correlated investigations" },
-  { name: "IBM QRadar", desc: "Log correlation, flow analysis, attack context, IoC triage" },
-  { name: "Cisco Umbrella Proxy", desc: "User browsing behavior, referral page identification" },
-  { name: "Cisco Secure Malware Analytics", desc: "Phishing domain extraction, malware deconstruction" },
-  { name: "Fortinet FortiSOAR", desc: "Workflow orchestration, playbook automation" },
+  { name: "Microsoft Defender XDR", desc: "Threat hunting with KQL, device timeline analysis, email triage, file and software inspection, and CVE vulnerability detection" },
+  { name: "IBM QRadar", desc: "Log correlation, traffic flow analysis, attack context decoding, IoC triaging, threat visualization" },
+  { name: "Cisco Umbrella Proxy", desc: "User browing behaviour, identifying referral pages even when not explicitly logged in SIEM" },
+  { name: "Cisco Secure Malware Analytics", desc: "Phishing domain extraction, malware process deconstruction, post-compromise behavior mapping, and threat artifact enrichment" },
+  { name: "Fortinet FortiSOAR", desc: "Workflow orchestration, playbook automation, alert/incident documentation, asset management" },
+  { name: "OSINT", desc: "VirusTotal, IBM X-Force, Cisco Talos, CrowdSec, Scamalytics, URLScan.io, and Whois for threat intelligence and domain analysis" }
+  
 ];
 
 export const incidents = [
