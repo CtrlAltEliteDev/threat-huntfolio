@@ -298,36 +298,56 @@ export default function Portfolio() {
               </div>
             </section>
 
-            {/* Education & Achievements */}
+            {/* Education & Achievements - Modern Layout */}
             <section className="mt-8">
-              <div style={{display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '24px'}}>
-                <div className="card animate-entrance" style={{animationDelay: '1.1s'}}>
-                  <h2 className="row" style={{fontSize:'clamp(16px,2.5vw,20px)'}}><GraduationCap size={18} className="accent"/> Education</h2>
-                  <div className="row" style={{gap: '8px', alignItems: 'flex-start', marginTop: '8px'}}>
-                    <div className="education-icon" style={{padding: '6px', borderRadius: '6px'}}>
-                      <GraduationCap size={16} className="accent"/>
+              <div className="education-achievements-grid">
+                {/* Education Section */}
+                <div className="education-section animate-entrance" style={{animationDelay: '1.1s'}}>
+                  <div className="section-header">
+                    <div className="section-icon education-icon-large">
+                      <GraduationCap size={24} className="accent"/>
                     </div>
-                    <div className="education-content">
-                      <div style={{fontWeight: 600, fontSize: '14px'}}>{education.degree}</div>
-                      <div className="university-name" style={{fontSize: '12px', marginTop: '2px'}}>{education.uni}</div>
-                      <div className="muted2 focus-text" style={{fontSize: '11px', marginTop: '2px'}}>{education.focus}</div>
-                      <div className="education-meta" style={{marginTop: '6px', gap: '6px'}}>
-                        <span className="date-range" style={{fontSize: '10px'}}>{education.start} – {education.end}</span>
-                        <span className="cgpa-badge" style={{fontSize: '9px', padding: '1px 4px'}}>{education.cgpa}</span>
+                    <h2 style={{fontSize:'clamp(18px,3vw,22px)', margin: 0}}>Education</h2>
+                  </div>
+                  
+                  <div className="education-card-modern">
+                    <div className="education-main">
+                      <h3 className="degree-title-modern">{education.degree}</h3>
+                      <div className="university-badge">{education.uni}</div>
+                    </div>
+                    
+                    <div className="education-details">
+                      <p className="focus-area">{education.focus}</p>
+                      <div className="education-timeline">
+                        <div className="timeline-dot"></div>
+                        <div className="timeline-content">
+                          <span className="timeline-period">{education.start} – {education.end}</span>
+                          <div className="cgpa-highlight">{education.cgpa}</div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="card animate-entrance" style={{animationDelay: '1.2s'}}>
-                  <h2 className="row" style={{fontSize:'clamp(16px,2.5vw,20px)'}}><Award size={18} className="accent"/> Achievements</h2>
-                  <div className="space-y" style={{marginTop: '8px'}}>
-                    {achievements.map((a, i) => (
-                      <div key={i} className="row animate-entrance" style={{animationDelay: `${1.3 + (i * 0.1)}s`, gap: '8px', alignItems: 'flex-start', padding: '4px 0'}}>
-                        <div className="achievement-icon" style={{padding: '4px', borderRadius: '4px'}}>
-                          <Award size={14} className="accent"/>
+                {/* Achievements Section */}
+                <div className="achievements-section animate-entrance" style={{animationDelay: '1.2s'}}>
+                  <div className="section-header">
+                    <div className="section-icon achievements-icon-large">
+                      <Award size={24} className="accent"/>
+                    </div>
+                    <h2 style={{fontSize:'clamp(18px,3vw,22px)', margin: 0}}>Achievements</h2>
+                  </div>
+                  
+                  <div className="achievements-grid-modern">
+                    {achievements.map((achievement, index) => (
+                      <div key={index} className="achievement-card animate-entrance" style={{animationDelay: `${1.3 + (index * 0.1)}s`}}>
+                        <div className="achievement-number">{String(index + 1).padStart(2, '0')}</div>
+                        <div className="achievement-content">
+                          <div className="achievement-text-modern">{achievement}</div>
                         </div>
-                        <span className="achievement-text" style={{fontSize: '12px', lineHeight: '1.3'}}>{a}</span>
+                        <div className="achievement-badge">
+                          <Award size={16} className="accent"/>
+                        </div>
                       </div>
                     ))}
                   </div>
