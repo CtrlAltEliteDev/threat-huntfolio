@@ -131,8 +131,8 @@ export default function Portfolio() {
             </svg>
           </div>
           <div className="loader-text">
-            <h1 className="loader-title">Security Analyst</h1>
-            <div className="loader-subtitle">Initializing Threat Detection Systems...</div>
+            <h1 className="loader-title">Engaging Threat Detection Protocol…</h1>
+            <div className="loader-subtitle">Evaluating your IP, cookies, and sense of humor.</div>
           </div>
           <div className="loader-progress">
             <div className="loader-bar"></div>
@@ -284,7 +284,7 @@ export default function Portfolio() {
               <p style={{marginTop:12, fontFamily: isDark ? 'Courier New, monospace' : 'inherit'}}>
                 {isDark ? (
                   <>
-                    <span className="terminal-cursor" style={{color: '#00ff00'}}>root@security:~$</span> Security Analyst with 1.8 years of hands-on SOC experience: monitoring, triaging, and responding to alerts. Skilled in threat detection, incident response, and remediation to safeguard enterprise infrastructure. Calm under pressure, collaborative with L2/L3, and consistently on-time against SLAs.
+                    <span className="terminal-cursor" style={{color: '#00ff00'}}>root@security:~$</span> Security Analyst with 2 years of hands-on SOC experience: monitoring, triaging, and responding to alerts. Skilled in threat detection, incident response, and remediation to safeguard enterprise infrastructure. Calm under pressure, collaborative with L2/L3, and consistently on-time against SLAs.
                   </>
                 ) : (
                   'Security Analyst with 1.8 years of hands-on SOC experience: monitoring, triaging, and responding to alerts. Skilled in threat detection, incident response, and remediation to safeguard enterprise infrastructure. Calm under pressure, collaborative with L2/L3, and consistently on-time against SLAs.'
