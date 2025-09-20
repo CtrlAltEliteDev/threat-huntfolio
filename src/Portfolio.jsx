@@ -309,7 +309,7 @@ export default function Portfolio() {
             <section className="card mt-8 animate-entrance" style={{animationDelay: '0.1s'}}>
               <h2 className="row" style={{fontSize:'clamp(18px,3vw,24px)'}}>
                 <Shield size={20} className="accent"/> 
-                Threat Timeline
+                Security Incident & Response Log
               </h2>
               <div className="timeline mt-6">
                 <div className="space-y">

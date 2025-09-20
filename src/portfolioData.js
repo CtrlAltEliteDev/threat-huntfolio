@@ -40,41 +40,38 @@ export const certifications = [
   { abbr: "CEH-Practical", name: "Certified Ethical Hacker v12 – Practical", org: "EC-Council", date: "April 2025", url: "https://aspen.eccouncil.org/VerifyBadge?type=certification&a=o2jPBvIo2t5MxoNABIYpODJoz1P9SBs5LqWYLx8PVTo=", image: "/CEH.png" },
   { abbr: "CEH", name: "Certified Ethical Hacker v12", org: "EC-Council", date: "August 2024", url: "https://aspen.eccouncil.org/VerifyBadge?type=certification&a=HLHJ6cwIhgyNHkfjTRD7IT2/lnmHgCqFdGTODBqSwnA=", image: "/CEH.png" },
   { abbr: "NSE-2", name: "Certified Fundamentals Cybersecurity", org: "Fortinet", date: "October 2024", url: "https://www.credly.com/badges/5fb71cd2-e98e-4bef-9b29-d30159369ca5/public_url", image: "/Fortinet.png" },
-  { abbr: "NPTEL", name: "Ethical Hacking", org: "IIT Kharagpur", date: "November 2023", url: "nptel.ac.in/noc/E_Certificate/NPTEL23CS75S73320006020301625", image: "/NPTEL.png" },
+  { abbr: "NPTEL", name: "Ethical Hacking", org: "NPTEL (IIT Kharagpur)", date: "November 2023", url: "nptel.ac.in/noc/E_Certificate/NPTEL23CS75S73320006020301625", image: "/NPTEL.png" },
   { abbr: "THM", name: "Active Learner on TryHackMe", org: "Self-paced", date: "Since Feb 2024", url: "https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1076369", image: "/tryhackme.jpg" },
 ];
 
 export const skills = [
-  "KQL triage",
-  "Email analysis",
-  "OSINT collection",
   "Incident Management",
-  "Playbook execution",
-  "Scripting",
-  "Communication",
-  "Threat Hunting",
-  "SIEM Operations",
+  "OSINT collection",
+  "Security Operations and Monitoring",
+  "Phishing Email analysis",
   "Log Analysis",
-  "Vulnerability Assessment",
-  "Network Security",
-  "Endpoint Detection",
-  "Malware Analysis",
-  "Forensics",
-  "Risk Assessment",
-  "Security Monitoring",
-  "Alert Correlation",
-  "Incident Response",
-  "Security Awareness",
-  "Compliance",
+  "Playbook execution",
   "Documentation",
-  "Team Collaboration",
-  "Problem Solving",
-  "Time Management"
+  "End user Communication",
+  "Due diligence",
+];
+
+export const scriptingLanguages = [
+  "Python",
+  "KQL",
+  "Bash",
+];
+
+export const spokenLanguages = [
+  "English (fluent)",
+  "Hindi (fluent)",
+  "Marathi (conversational)",
+  "Malayalam (native)",
 ];
 
 export const education = {
   degree: "B.E. in Computer Science",
-  focus: "Cryptography & Cybersecurity",
+  focus: "Focus: Cryptography & Cybersecurity",
   uni: "Alvas Institute of Engineering and Technology, VTU",
   cgpa: "8.7 CGPA",
   start: "Aug 2019",
@@ -105,14 +102,14 @@ export const tools = [
   { 
     name: "Cisco Umbrella Proxy", 
     desc: "User browsing behaviour, identifying referral pages even when not explicitly logged in SIEM",
-    category: "Network Security",
+    category: "Web Traffic Analysis",
     icon: "Network",
     color: "#1ba1e2"
   },
   { 
     name: "Cisco Secure Malware Analytics", 
     desc: "Phishing domain extraction, malware process deconstruction, post-compromise behavior mapping, and threat artifact enrichment",
-    category: "Malware Analysis",
+    category: "Sandbox Analysis",
     icon: "FileSearch",
     color: "#1ba1e2"
   },
@@ -126,7 +123,7 @@ export const tools = [
   { 
     name: "OSINT Tools", 
     desc: "VirusTotal, IBM X-Force, Cisco Talos, CrowdSec, Scamalytics, URLScan.io, and Whois for threat intelligence and domain analysis",
-    category: "OSINT",
+    category: "Domain & IP Enri",
     icon: "Globe",
     color: "#28a745"
   }
@@ -148,11 +145,10 @@ export const incidents = [
     howIResponded: "Engaged service desk to initiate password reset, advised user to set a strong password, and proposed stronger password policy with reduced expiry duration.",
   },
   { 
-    title: "Excessive MFA Prompts", 
-    severity: "Low", 
-    tags: ["Account", "Brute Force"], 
-    notes: "Enabled number match, blocked source IP ranges, user education.",
-    whatHappened: "Multiple users reported receiving excessive MFA prompts, automated brute force attack targeting corporate accounts detected, suspicious IPs attempting credential stuffing",
-    responseActions: "Enabled number matching for MFA, blocked malicious IP ranges, conducted user security awareness training, and implemented additional monitoring"
+    title: "Phishing Email Barrage with DGA Domains",
+    severity: "Medium",
+    tags: ["Email", "Phishing", "DGA", "URL Analysis", "KQL"],
+    whatHappened: "Received a barrage of phishing emails containing DGA-based URLs with varied root and subdomains, making traditional triage ineffective.",
+    howIResponded: "Used KQL for efficient email triage, performed sandbox analysis after stripping tracking identifiers, confirmed no user interaction, and blocked malicious domains, root domains, and subject patterns via regex.",
   },
 ];
