@@ -283,47 +283,96 @@ export default function Portfolio() {
               {/* Skills */}
               <div className="skills-container animate-entrance skills-section">
                 <h2 className="row section-title"><Code2 size={20} className="accent"/> Skills</h2>
-                <div className="skills-group">
-                  <div className="muted2 skills-group-title">Core Skills</div>
-                  <div className="skills-list">
-                    {skills.map((s) => (
-                      <span 
-                        key={s} 
-                        className="skill skill-item" 
-                      >
-                        {s}
-                      </span>
-                    ))}
+                
+                {/* Desktop Skills Layout */}
+                <div className="skills-desktop">
+                  <div className="skills-group">
+                    <div className="muted2 skills-group-title">Core Skills</div>
+                    <div className="skills-list">
+                      {skills.map((s) => (
+                        <span 
+                          key={s} 
+                          className="skill skill-item" 
+                        >
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="skills-group">
+                    <div className="muted2 skills-group-title">Scripting Languages</div>
+                    <div className="skills-list">
+                      {scriptingLanguages.map((lang) => (
+                        <span
+                          key={lang}
+                          className="skill skill-item"
+                        >
+                          {lang}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="skills-group">
+                    <div className="muted2 skills-group-title">Spoken Languages</div>
+                    <div className="skills-list">
+                      {spokenLanguages.map((lang) => (
+                        <span
+                          key={lang}
+                          className="skill skill-item"
+                        >
+                          {lang}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
-              <div className="skills-group">
-                <div className="muted2 skills-group-title">Scripting Languages</div>
-                <div className="skills-list">
-                  {scriptingLanguages.map((lang) => (
-                    <span
-                      key={lang}
-                      className="skill skill-item"
-                    >
-                      {lang}
-                    </span>
-                  ))}
-                </div>
-              </div>
+                {/* Mobile Skills Cards */}
+                <div className="skills-mobile">
+                  <div className="skill-card animate-entrance" style={{animationDelay: '0.1s'}}>
+                    <div className="skill-card-header">
+                      <Code2 size={20} className="accent" />
+                      <h3 className="skill-card-title">Core Skills</h3>
+                    </div>
+                    <div className="skill-card-content">
+                      {skills.map((s) => (
+                        <span key={s} className="skill skill-item">
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
 
-              <div className="skills-group">
-                <div className="muted2 skills-group-title">Spoken Languages</div>
-                <div className="skills-list">
-                  {spokenLanguages.map((lang) => (
-                    <span
-                      key={lang}
-                      className="skill skill-item"
-                    >
-                      {lang}
-                    </span>
-                  ))}
+                  <div className="skill-card animate-entrance" style={{animationDelay: '0.2s'}}>
+                    <div className="skill-card-header">
+                      <Code2 size={20} className="accent" />
+                      <h3 className="skill-card-title">Scripting Languages</h3>
+                    </div>
+                    <div className="skill-card-content">
+                      {scriptingLanguages.map((lang) => (
+                        <span key={lang} className="skill skill-item">
+                          {lang}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="skill-card animate-entrance" style={{animationDelay: '0.3s'}}>
+                    <div className="skill-card-header">
+                      <Code2 size={20} className="accent" />
+                      <h3 className="skill-card-title">Spoken Languages</h3>
+                    </div>
+                    <div className="skill-card-content">
+                      {spokenLanguages.map((lang) => (
+                        <span key={lang} className="skill skill-item">
+                          {lang}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              </div>
               </div>
             </section>
 
