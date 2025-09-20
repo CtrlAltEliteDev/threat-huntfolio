@@ -157,7 +157,7 @@ export default function Portfolio() {
 
           {/* Summary */}
           <main className="container" style={{paddingBottom: 64}}>
-            <section className={`card animate-entrance data-stream ${isDark ? 'terminal-window' : ''}`} style={{animationDelay: '0.1s'}}>
+            <section className={`card animate-entrance ${isDark ? 'terminal-window' : ''}`} style={{animationDelay: '0.1s',paddingTop:'6vh'}}>
               <h2 className="row" style={{fontSize:'clamp(18px,3vw,24px)'}}>
                 <Shield size={20} className="accent"/> 
                 {isDark ? (
