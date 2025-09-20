@@ -168,97 +168,43 @@ export default function Portfolio() {
 
           {/* Header */}
           <header className="container header">
-<div
-  className="header-flex"
-  style={{
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    flexFlow: "row-reverse wrap",
-  }}
->
-  <div
-    className="avatar"
-    style={{
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      width: 230,           // Increased size
-      height: 230,          // Increased size
-      flexShrink: 0,
-    }}
-  >
+<div className="header-flex header-flex-container">
+  <div className="avatar">
     <img
       alt="Pranav Kalidas"
       className="avatar-image"
       src="/SOCAnalyst.jpeg"
-      style={{
-        width: "100%",
-        height: "100%",
-        objectFit: "cover",
-        borderRadius: "50%",
-      }}
     />
   </div>
-  <div
-    style={{
-      display: "flex",
-      alignItems: "flex-start",
-      justifyContent: "space-between",
-      flex: "1 1 0%",
-      minWidth: 0,
-      flexDirection: "column",
-    }}
-  >
-    <div
-      className="header-left"
-      style={{
-        flex: "1 1 0%",
-        textAlign: "left",
-        minWidth: 0,
-        width: "100%",
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
+  <div className="header-content">
+    <div className="header-left header-left-content">
       <div>
-        <h1 style={{ fontSize: "clamp(28px, 4vw, 60px)" }}>
+        <h1 className="main-title">
           Pranav Kalidas <span className="accent">✦</span>
         </h1>
       </div>
       <div>
-        <p className="row muted2" style={{marginTop: 10, marginBottom: 0 }}>
+        <p className="row muted2 security-analyst-text">
           <Shield size={16} /> Security Analyst
         </p>
       </div>
       <div>
-        <p className="row muted" style={{ marginTop: 6 }}>
+        <p className="row muted location-text">
           <MapPin size={16} /> Kozhikode, Kerala — 673522
         </p>
       </div>
     </div>
-    <div
-      className="links"
-      style={{
-        marginLeft: 0,
-        width: "100%",
-        display: "flex",
-        alignItems: "flex-start",
-        flexWrap: "wrap",
-        gap: 12,
-      }}
-    >
+    <div className="links links-container">
       <button
-        className="pill theme-toggle-pill"
+        className="pill theme-toggle-pill theme-toggle-hidden"
         aria-label="Toggle theme"
-        style={{ display: "none" }}
         onClick={toggleTheme}
       >
         {isDark ? <Sun size={16} /> : <Moon size={16} />}{" "}
         {isDark ? "Light mode" : "Dark mode"}
       </button>
       <a href="mailto:kalidas.pranav@gmail.com" className="pill">
-        <Mail size={16} /> kalidas.pranav@gmail.com
+        <Mail size={16} /> <span className="contact-text">kalidas.pranav@gmail.com</span>
       </a>
       <a
         href="https://linkedin.com/in/pranav-kalidas"
@@ -266,12 +212,12 @@ export default function Portfolio() {
         rel="noreferrer"
         className="pill"
       >
-        <Globe size={16} /> linkedin.com/in/pranav-kalidas{" "}
-        <ExternalLink size={16} />
+        <Globe size={16} /> <span className="contact-text">linkedin.com/in/pranav-kalidas {" "}
+        <ExternalLink size={16} /></span>
       </a>
       <button className="btn-primary row" onClick={generateResumePDF}>
         <Award size={16} />
-        <span className="terminal-cursor">Download Resume (PDF)</span>
+        <span className="terminal-cursor contact-text">Download Resume (PDF)</span>
       </button>
     </div>
   </div>
@@ -279,9 +225,9 @@ export default function Portfolio() {
           </header>
 
           {/* Summary */}
-          <main className="container" style={{paddingBottom: 64}}>
-            <section className={`card animate-entrance professional-summary-section ${isDark ? 'terminal-window' : ''}`} style={{animationDelay: '0.1s',paddingTop:'6vh'}}>
-              <h2 className="row" style={{fontSize:'clamp(18px,3vw,24px)'}}>
+          <main className="container main-container">
+            <section className={`card animate-entrance professional-summary-section ${isDark ? 'terminal-window' : ''}`}>
+              <h2 className="row section-title">
                 <Shield size={20} className="accent"/> 
                 {isDark ? (
                   <span className="terminal-cursor">Professional Summary</span>
@@ -289,10 +235,10 @@ export default function Portfolio() {
                   'Professional Summary'
                 )}
               </h2>
-              <p style={{marginTop:12, fontFamily: isDark ? 'Courier New, monospace' : 'inherit'}}>
+              <p className="professional-summary-text">
                 {isDark ? (
                   <>
-                    <span style={{color: '#00ff00'}}>root@security:~$ </span>Security Analyst with 1.8 years of hands-on SOC experience: monitoring, triaging, and responding to alerts. Skilled in threat detection, incident response, and remediation to safeguard enterprise infrastructure. Calm under pressure, collaborative with L2/L3, and consistently on-time against SLAs.<span className="terminal-cursor"></span> 
+                    <span className="terminal-prompt">root@security:~$ </span>Security Analyst with 1.8 years of hands-on SOC experience: monitoring, triaging, and responding to alerts. Skilled in threat detection, incident response, and remediation to safeguard enterprise infrastructure. Calm under pressure, collaborative with L2/L3, and consistently on-time against SLAs.<span className="terminal-cursor"></span> 
                   </>
                 ) : (
                   'Security Analyst with 1.8 years of hands-on SOC experience: monitoring, triaging, and responding to alerts. Skilled in threat detection, incident response, and remediation to safeguard enterprise infrastructure. Calm under pressure, collaborative with L2/L3, and consistently on-time against SLAs.'
@@ -302,11 +248,11 @@ export default function Portfolio() {
 
             {/* Experience & Skills */}
             <section className="grid-main mt-8">
-              <div className="card animate-entrance" style={{animationDelay: '0.2s'}}>
-                <h2 className="row" style={{fontSize:'clamp(18px,3vw,24px)'}}><Briefcase size={20} className="accent"/> Experience</h2>
+              <div className="card animate-entrance experience-section">
+                <h2 className="row section-title"><Briefcase size={20} className="accent"/> Experience</h2>
                 <div className="space-y mt-6">
                   {[...experience].map((exp, idx) => (
-                    <div key={idx} className="card experience-card animate-entrance" style={{animationDelay: `${0.3 + (idx * 0.1)}s`}}>
+                    <div key={idx} className="card experience-card animate-entrance experience-card-item">
                       <div className="row experience-header">
                         <div className="experience-company-info">
                           <div className="experience-logo-container">
@@ -335,16 +281,15 @@ export default function Portfolio() {
               </div>
 
               {/* Skills */}
-              <div className="skills-container animate-entrance" style={{animationDelay: '0.4s'}}>
-                <h2 className="row" style={{fontSize:'clamp(18px,3vw,24px)'}}><Code2 size={20} className="accent"/> Skills</h2>
-                <div className="skills-group" style={{ marginTop: 16 }}>
-                  <div className="muted2" style={{ fontWeight: 600, marginBottom: 8 }}>Core Skills</div>
+              <div className="skills-container animate-entrance skills-section">
+                <h2 className="row section-title"><Code2 size={20} className="accent"/> Skills</h2>
+                <div className="skills-group">
+                  <div className="muted2 skills-group-title">Core Skills</div>
                   <div className="skills-list">
-                    {skills.map((s, index) => (
+                    {skills.map((s) => (
                       <span 
                         key={s} 
-                        className="skill" 
-                        style={{ '--skill-index': index }}
+                        className="skill skill-item " 
                       >
                         {s}
                       </span>
@@ -352,14 +297,13 @@ export default function Portfolio() {
                   </div>
                 </div>
 
-              <div className="skills-group" style={{ marginTop: 16 }}>
-                <div className="muted2" style={{ fontWeight: 600, marginBottom: 8 }}>Scripting Languages</div>
+              <div className="skills-group">
+                <div className="muted2 skills-group-title">Scripting Languages</div>
                 <div className="skills-list">
-                  {scriptingLanguages.map((lang, index) => (
+                  {scriptingLanguages.map((lang) => (
                     <span
                       key={lang}
-                      className="skill"
-                      style={{ '--skill-index': index }}
+                      className="skill skill-item"
                     >
                       {lang}
                     </span>
@@ -367,14 +311,13 @@ export default function Portfolio() {
                 </div>
               </div>
 
-              <div className="skills-group" style={{ marginTop: 16 }}>
-                <div className="muted2" style={{ fontWeight: 600, marginBottom: 8 }}>Spoken Languages</div>
+              <div className="skills-group">
+                <div className="muted2 skills-group-title">Spoken Languages</div>
                 <div className="skills-list">
-                  {spokenLanguages.map((lang, index) => (
+                  {spokenLanguages.map((lang) => (
                     <span
                       key={lang}
-                      className="skill"
-                      style={{ '--skill-index': index }}
+                      className="skill skill-item"
                     >
                       {lang}
                     </span>
@@ -385,8 +328,8 @@ export default function Portfolio() {
             </section>
 
             {/* Certifications Badge Wall */}
-            <section className="card mt-8 animate-entrance" style={{animationDelay: '0.5s'}}>
-              <h2 className="row" style={{fontSize:'clamp(18px,3vw,24px)'}}><Award size={20} className="accent"/> Certifications & Badge Wall</h2>
+            <section className="card mt-8 animate-entrance certifications-section">
+              <h2 className="row section-title"><Award size={20} className="accent"/> Certifications & Badge Wall</h2>
               <div className="grid-tiles mt-6">
                 {certifications.map((c, i) => (
                   <a 
@@ -394,19 +337,18 @@ export default function Portfolio() {
                     href={c.url.startsWith('http') ? c.url : `https://${c.url}`} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="card animate-entrance certification-card-clickable" 
-                    style={{display:'flex', alignItems:'center', gap:12, animationDelay: `${0.6 + (i * 0.1)}s`, textDecoration:'none', color:'inherit'}}
+                    className="card animate-entrance certification-card-clickable certification-card"
                   >
-                    <div className="certification-image-container" style={{height:42, width:40, borderRadius:999, display:'grid', placeItems:'center', overflow:'hidden', cursor:'pointer'}}>
+                    <div className="certification-image-container">
                       <img 
                         src={c.image} 
                         alt={c.org} 
-                        style={{width:'100%', height:'100%', objectFit:'cover', borderRadius:'50%'}}
+                        className="certification-image"
                       />
                     </div>
-                    <div style={{textAlign:'left', flex:1}}>
-                      <div className="certification-name" style={{fontWeight:600, cursor:'pointer'}}>{c.name}</div>
-                      <div className="muted" style={{fontSize:12}}>{c.org} • {c.date}</div>
+                    <div className="certification-content">
+                      <div className="certification-name">{c.name}</div>
+                      <div className="muted certification-meta">{c.org} • {c.date}</div>
                     </div>
                     <div className="certification-external-link">
                       <ExternalLink size={16} className="accent"/>
@@ -417,8 +359,8 @@ export default function Portfolio() {
             </section>
 
             {/* Tools & Technologies */}
-            <section className="card mt-8 animate-entrance tools-section" style={{animationDelay: '0.7s'}}>
-              <h2 className="row" style={{fontSize:'clamp(18px,3vw,24px)', marginBottom: '24px'}}>
+            <section className="card mt-8 animate-entrance tools-section">
+              <h2 className="row tools-section-title">
                 <Code2 size={20} className="accent"/>
                 {isDark ? (
                   <span className="terminal-cursor">Tools & Technologies</span>
@@ -445,14 +387,11 @@ export default function Portfolio() {
                     return (
                       <div key={i} className="tool-card-wrapper">
                         <div
-                          className="tool-card animate-entrance"
-                          style={{
-                            animationDelay: `${0.8 + (i * 0.1)}s`,
-                            '--tool-color': t.color
-                          }}
+                          className="tool-card animate-entrance tool-card-item"
+                          style={{ '--tool-color': t.color }}
                         >
                           <div className="tool-header">
-                            <div className="tool-icon" style={{backgroundColor: t.color}}>
+                            <div className="tool-icon">
                               <IconComponent size={20} />
                             </div>
                             <div className="tool-category">{t.category}</div>
@@ -462,7 +401,7 @@ export default function Portfolio() {
                             <p className="tool-description">{t.desc}</p>
                           </div>
                           <div className="tool-footer">
-                            <div className="tool-accent-line" style={{backgroundColor: t.color}}></div>
+                            <div className="tool-accent-line"></div>
                           </div>
                         </div>
                       </div>
@@ -473,51 +412,31 @@ export default function Portfolio() {
             </section>
 
             {/* Threat Timeline */}
-            <section className="card mt-8 animate-entrance" style={{animationDelay: '0.1s'}}>
-              <h2 className="row" style={{fontSize:'clamp(18px,3vw,24px)'}}>
+            <section className="card mt-8 animate-entrance timeline-section">
+              <h2 className="row section-title">
                 <Shield size={20} className="accent"/> 
                 Security Incident & Response Log
               </h2>
               <div className="timeline mt-6">
                 <div className="space-y">
-                  {incidents && incidents.length > 0 ? incidents.map((it, idx) => (
-                    <div key={it.title} className="timeline-item animate-entrance" style={{animationDelay: `${0.2 + (idx * 0.1)}s`}}>
+                  {incidents && incidents.length > 0 ? incidents.map((it) => (
+                    <div key={it.title} className="timeline-item animate-entrance timeline-item-content">
                       <span className="dot" />
-                      <div className="row" style={{justifyContent:'space-between'}}>
-                        <div style={{fontWeight:600}}>{it.title}</div>
+                      <div className="row timeline-header">
+                        <div className="timeline-title">{it.title}</div>
                         <span className={`severity-chip severity-${it.severity.toLowerCase()}`}>
                           {it.severity}
                         </span>
                       </div>
-                      <div className="row" style={{gap:8, marginTop:8, flexWrap:'wrap'}}>
+                      <div className="row timeline-tags">
                         {it.tags.map(t => <span key={t} className="chip">{t}</span>)}
                       </div>
-                      <p className="muted2" style={{marginTop:8, fontSize:14}}>{it.notes}</p>
+                      <p className="muted2 timeline-notes">{it.notes}</p>
                       
                       {/* Show More/Less Button */}
                       <button 
                         onClick={() => toggleIncidentDetails(it.title)}
-                        style={{
-                          marginTop: 12,
-                          padding: '6px 0',
-                          backgroundColor: 'transparent',
-                          color: 'var(--amber)',
-                          border: 'none',
-                          borderRadius: '0',
-                          cursor: 'pointer',
-                          fontSize: '11px',
-                          fontWeight: '500',
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '4px',
-                          transition: 'all 0.3s ease',
-                          fontFamily: 'var(--font-primary)',
-                          textDecoration: 'underline',
-                          textUnderlineOffset: '2px',
-                          position: 'relative',
-                          overflow: 'hidden',
-                          outline: 'none'
-                        }}
+                        className="show-more-button"
                         onMouseOver={(e) => {
                           e.target.style.color = 'var(--amber-strong)';
                           e.target.style.textDecorationThickness = '2px';
@@ -542,34 +461,29 @@ export default function Portfolio() {
 
                       {/* Collapsible Details */}
                       <div 
-                        style={{
-                          maxHeight: expandedIncidents[it.title] ? '500px' : '0',
-                          overflow: 'hidden',
-                          transition: 'max-height 0.4s ease-in-out, opacity 0.3s ease-in-out',
-                          opacity: expandedIncidents[it.title] ? 1 : 0
-                        }}
+                        className={`incident-details-container ${expandedIncidents[it.title] ? 'expanded' : ''}`}
                       >
                         {/* Threat Analysis Section */}
-                        <div className="incident-details" style={{marginTop:12, padding:12, backgroundColor:'rgba(245, 158, 11, 0.05)', borderRadius:8, border:'1px solid rgba(245, 158, 11, 0.2)'}}>
-                          <div className="detail-header" style={{display:'flex', alignItems:'center', gap:8, marginBottom:8}}>
+                        <div className="incident-details">
+                          <div className="detail-header">
                             <Shield size={14} className="accent"/>
-                            <span style={{fontWeight:600, fontSize:13, color:'var(--text)'}}>What Happened:</span>
+                            <span>What Happened:</span>
                           </div>
-                          <p style={{fontSize:13,marginRight:10, lineHeight:1.5, textAlign:'left', color:'var(--muted-2)'}}>{it.whatHappened}</p>
+                          <p className="detail-text">{it.whatHappened}</p>
                         </div>
 
                         {/* Response Actions Section */}
-                        <div className="incident-details" style={{marginTop:8, padding:12, backgroundColor:'rgba(16, 185, 129, 0.05)', borderRadius:8, border:'1px solid rgba(16, 185, 129, 0.2)'}}>
-                          <div className="detail-header" style={{display:'flex', alignItems:'center', gap:8, marginBottom:8}}>
+                        <div className="incident-details">
+                          <div className="detail-header">
                             <Zap size={14} className="accent"/>
-                            <span style={{fontWeight:600, fontSize:13, color:'var(--text)'}}>How I responded:</span>
+                            <span>How I responded:</span>
                           </div>
-                          <p style={{fontSize:13, lineHeight:1.5, marginRight:10,textAlign:'left', color:'var(--muted-2)'}}>{it.howIResponded}</p>
+                          <p className="detail-text">{it.howIResponded}</p>
                         </div>
                       </div>
                     </div>
                   )) : (
-                    <div style={{padding: '20px', textAlign: 'center', color: 'var(--muted)', backgroundColor: 'rgba(255, 0, 0, 0.1)', border: '1px solid red'}}>
+                    <div className="debug-error">
                       No incidents data available - Debug: incidents = {JSON.stringify(incidents)}
                     </div>
                   )}
@@ -579,14 +493,14 @@ export default function Portfolio() {
 
             {/* Education & Achievements - Modern Layout */}
             <section className="mt-8">
-              <div className="education-achievements-grid">
+              <div className="education-achievements-grid education-achievements-container">
                 {/* Education Section */}
-                <div className="education-section animate-entrance" style={{animationDelay: '1.1s'}}>
+                <div className="education-section animate-entrance">
                   <div className="section-header">
                     <div className="section-icon education-icon-large">
                       <GraduationCap size={24} className="accent"/>
                     </div>
-                    <h2 style={{fontSize:'clamp(18px,3vw,22px)', margin: 0}}>Education</h2>
+                    <h2 className="section-title">Education</h2>
                   </div>
                   
                   <div className="education-card-modern">
@@ -608,12 +522,12 @@ export default function Portfolio() {
                 </div>
 
                 {/* Achievements Section */}
-                <div className="achievements-section animate-entrance" style={{animationDelay: '1.2s'}}>
+                <div className="achievements-section animate-entrance">
                   <div className="section-header">
                     <div className="section-icon achievements-icon-large">
                       <Award size={24} className="accent"/>
                     </div>
-                    <h2 style={{fontSize:'clamp(18px,3vw,22px)', margin: 0}}>Achievements</h2>
+                    <h2 className="section-title">Achievements</h2>
                   </div>
                   
                   <div className="achievements-grid-modern">
@@ -634,20 +548,20 @@ export default function Portfolio() {
             </section>
 
             {/* CTA */}
-            <section className={`card mt-8 center animate-entrance ${isDark ? 'data-stream' : ''}`} style={{display: 'flex', flexDirection: 'column', alignItems: 'center',justifyContent: 'center', animationDelay: '1.6s'}}>
-              <h2 style={{fontSize:'clamp(18px,3vw,24px)'}}>
+            <section className={`card mt-8 center animate-entrance cta-section ${isDark ? 'data-stream' : ''}`}>
+              <h2 className="section-title">
                 "Let's connect"
               </h2>
-              <p className="muted2" style={{marginTop:8, fontFamily: isDark ? 'Courier New, monospace' : 'inherit', textAlign: 'center'}}>
+              <p className="muted2 cta-text">
                 {isDark ? (
                   <>
-                    <span style={{color: '#00ff00'}}>root@security:~$ </span>Open to security analyst roles, SOC operations, and threat detection projects.<span className="terminal-cursor"></span>
+                    <span className="terminal-prompt">root@security:~$ </span>Open to security analyst roles, SOC operations, and threat detection projects.<span className="terminal-cursor"></span>
                   </>
                 ) : (
                   'Open to security analyst roles, SOC operations, and threat detection projects.'
                 )}
               </p>
-              <div className="row" style={{justifyContent:'center', marginTop:16}}>
+              <div className="row cta-buttons">
                 <a href={`mailto:${contact.email}`} className="btn-primary row">
                   <Mail size={16}/> 
                      Email
@@ -661,7 +575,7 @@ export default function Portfolio() {
           </main>
 
           {/* Footer */}
-          <footer className="container center" style={{paddingBottom:40, color:'var(--muted)'}}>
+          <footer className="container center">
             © {new Date().getFullYear()} Pranav Kalidas. All rights reserved.
           </footer>
         </>
