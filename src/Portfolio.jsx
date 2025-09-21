@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 import "./Portfolio.css";
 import {
   contact,
@@ -59,8 +58,7 @@ export default function Portfolio({ defaultTheme = "dark" }) {
 
   useEffect(() => {
     // Ensure Tailwind dark mode works: requires tailwind.config.js -> darkMode: 'class'
-    const stored = localStorage.getItem('theme');
-    const initialDark = stored ? stored === 'dark' : (defaultTheme === 'dark'); // Use defaultTheme prop
+    const initialDark = defaultTheme === 'dark';
     document.documentElement.classList.toggle('dark', initialDark);
     document.body.classList.toggle('dark', initialDark); // extra safety for some setups
     setIsDark(initialDark);
@@ -652,6 +650,3 @@ export default function Portfolio({ defaultTheme = "dark" }) {
   );
 }
 
-Portfolio.propTypes = {
-  defaultTheme: PropTypes.string
-};
