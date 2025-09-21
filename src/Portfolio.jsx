@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import "./Portfolio.css";
 import {
   contact,
@@ -39,8 +40,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-export default function Portfolio() {
-  const [isDark, setIsDark] = useState(true);
+export default function Portfolio({ defaultTheme = "dark" }) {
+  const [isDark, setIsDark] = useState(defaultTheme === "dark");
   const [isLoading, setIsLoading] = useState(true);
   const [expandedIncidents, setExpandedIncidents] = useState({});
   const [showAllCertifications, setShowAllCertifications] = useState(false);
@@ -59,7 +60,7 @@ export default function Portfolio() {
   useEffect(() => {
     // Ensure Tailwind dark mode works: requires tailwind.config.js -> darkMode: 'class'
     const stored = localStorage.getItem('theme');
-    const initialDark = stored ? stored === 'dark' : true; // Default to dark theme
+    const initialDark = stored ? stored === 'dark' : (defaultTheme === 'dark'); // Use defaultTheme prop
     document.documentElement.classList.toggle('dark', initialDark);
     document.body.classList.toggle('dark', initialDark); // extra safety for some setups
     setIsDark(initialDark);
@@ -650,3 +651,7 @@ export default function Portfolio() {
     </div>
   );
 }
+
+Portfolio.propTypes = {
+  defaultTheme: PropTypes.string
+};

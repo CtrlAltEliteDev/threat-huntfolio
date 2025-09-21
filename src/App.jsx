@@ -2,7 +2,7 @@ import Portfolio from './Portfolio'
 import './App.css'
 
 function App() {
-  return <Portfolio />
+  return <Portfolio defaultTheme="dark" />
 }
 
 export default App
