@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Portfolio.css";
+import "./Mobile.css";
 import {
   contact,
   experience,
