@@ -3288,7 +3288,7 @@ footer {
 
   /* Show all certifications when toggled */
   .certifications-section.show-all .certification-hidden {
-    display: block;
+    display: flex !important;
   }
 
   .chip{
