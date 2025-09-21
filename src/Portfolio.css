@@ -3439,4 +3439,96 @@ footer {
   .certification-meta{
     font-size: 11px;
   }
+
+  /* Mobile Timeline - Compact Card Layout */
+  .timeline {
+    padding-left: 0 !important;
+  }
+
+  .timeline::before {
+    display: none !important;
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 12px;
+    padding: 12px;
+    border-radius: 12px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  .timeline-item .dot {
+    display: none !important;
+  }
+
+  .timeline-header {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .timeline-title {
+    font-size: 12px !important;
+    text-align: left !important;
+    font-weight: 600;
+    line-height: 1.3;
+    flex: 1;
+  }
+
+  .severity-chip {
+    font-size: 9px !important;
+    padding: 3px 6px !important;
+    flex-shrink: 0;
+  }
+
+  .timeline-tags {
+    margin-top: 6px !important;
+    gap: 4px !important;
+  }
+
+  .timeline-tags .chip {
+    margin-top: 9px;
+    display: inline-block !important;
+    font-size: 9px !important;
+    padding: 3px 6px !important;
+  }
+
+  .timeline-notes {
+    font-size: 12px !important;
+    line-height: 1.4;
+    margin-top: 8px !important;
+  }
+
+  .show-more-button {
+    font-size: 10px !important;
+    padding: 4px 0 !important;
+    margin-top: 8px !important;
+  }
+
+  .incident-details {
+    padding: 8px !important;
+    margin-top: 8px !important;
+    border-radius: 6px;
+  }
+
+  .detail-header {
+    margin-bottom: 6px !important;
+    font-size: 11px !important;
+  }
+
+  .detail-text {
+    font-size: 11px !important;
+    line-height: 1.4;
+    margin-right: 0 !important;
+  }
+
+  /* Hide debug error on mobile */
+  .debug-error {
+    font-size: 10px !important;
+    padding: 8px !important;
+  }
 }
