@@ -124,7 +124,7 @@ export default function Portfolio({ defaultTheme = "dark" }) {
   // PDF download function
   const generateResumePDF = () => {
     const link = document.createElement('a');
-    link.href = '/Pranav Kalidas Resume v1.3.pdf';
+    link.href = '/Pranav Kalidas Resume v1.4.pdf';
     link.download = 'Pranav_Kalidas_Resume.pdf';
     document.body.appendChild(link);
     link.click();
