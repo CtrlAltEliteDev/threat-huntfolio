@@ -173,61 +173,79 @@ export default function Portfolio({ defaultTheme = "dark" }) {
 
           {/* Header */}
           <header className="container header">
-<div className="header-flex header-flex-container">
-  <div className="avatar">
-    <img
-      alt="Pranav Kalidas"
-      className="avatar-image"
-      src="/SOCAnalyst.jpeg"
-    />
-  </div>
-  <div className="header-content">
-    <div className="header-left header-left-content">
-      <div>
-        <h1 className="main-title">
-          Pranav Kalidas <span className="accent">✦</span>
-        </h1>
+  <div className="header-flex header-flex-container">
+    <div
+      className="avatar"
+      style={{
+        display: "flex",
+        alignItems: "stretch",
+        justifyContent: "stretch",
+        height: "100%",      // Fill parent height
+        width: "180px",      // Fixed width for avatar
+        minHeight: "180px",  // Ensures minimum height matches content
+        maxHeight: "100%",   // Prevent overflow
+        flexShrink: 0,
+      }}
+    >
+      <img
+        alt="Pranav Kalidas"
+        className="avatar-image"
+        src="/SOCAnalyst.jpeg"
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          borderRadius: "50%",
+          display: "block",
+        }}
+      />
+    </div>
+    <div className="header-content">
+      <div className="header-left header-left-content">
+        <div>
+          <h1 className="main-title">
+            Pranav Kalidas <span className="accent">✦</span>
+          </h1>
+        </div>
+        <div>
+          <p className="row muted2 security-analyst-text">
+            <Shield size={16} /> Security Analyst
+          </p>
+        </div>
+        <div>
+          <p className="row muted location-text">
+            <MapPin size={16} /> Kozhikode, Kerala — 673522
+          </p>
+        </div>
       </div>
-      <div>
-        <p className="row muted2 security-analyst-text">
-          <Shield size={16} /> Security Analyst
-        </p>
-      </div>
-      <div>
-        <p className="row muted location-text">
-          <MapPin size={16} /> Kozhikode, Kerala — 673522
-        </p>
+      <div className="links links-container">
+        <button
+          className="pill theme-toggle-pill theme-toggle-hidden"
+          aria-label="Toggle theme"
+          onClick={toggleTheme}
+        >
+          {isDark ? <Sun size={16} /> : <Moon size={16} />}{" "}
+          {isDark ? "Light mode" : "Dark mode"}
+        </button>
+        <a href="mailto:kalidas.pranav@gmail.com" className="pill">
+          <Mail size={16} /> <span className="contact-text">kalidas.pranav@gmail.com</span>
+        </a>
+        <a
+          href="https://linkedin.com/in/pranav-kalidas"
+          target="_blank"
+          rel="noreferrer"
+          className="pill"
+        >
+          <Globe size={16} /> <span className="contact-text">linkedin.com/in/pranav-kalidas <ExternalLink size={16} /></span>
+        </a>
+        <button className="btn-primary row" onClick={generateResumePDF}>
+          <Award size={16} />
+          <span className="terminal-cursor contact-text">Download Resume (PDF)</span>
+        </button>
       </div>
     </div>
-    <div className="links links-container">
-      <button
-        className="pill theme-toggle-pill theme-toggle-hidden"
-        aria-label="Toggle theme"
-        onClick={toggleTheme}
-      >
-        {isDark ? <Sun size={16} /> : <Moon size={16} />}{" "}
-        {isDark ? "Light mode" : "Dark mode"}
-      </button>
-      <a href="mailto:kalidas.pranav@gmail.com" className="pill">
-        <Mail size={16} /> <span className="contact-text">kalidas.pranav@gmail.com</span>
-      </a>
-      <a
-        href="https://linkedin.com/in/pranav-kalidas"
-        target="_blank"
-        rel="noreferrer"
-        className="pill"
-      >
-        <Globe size={16} /> <span className="contact-text">linkedin.com/in/pranav-kalidas {" "}
-        <ExternalLink size={16} /></span>
-      </a>
-      <button className="btn-primary row" onClick={generateResumePDF}>
-        <Award size={16} />
-        <span className="terminal-cursor contact-text">Download Resume (PDF)</span>
-      </button>
-    </div>
   </div>
-</div>
-          </header>
+</header>
 
           {/* Summary */}
           <main className="container main-container">
