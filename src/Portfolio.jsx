@@ -261,10 +261,10 @@ export default function Portfolio({ defaultTheme = "dark" }) {
               <p className="professional-summary-text">
                 {isDark ? (
                   <>
-                    <span className="terminal-prompt">root@security:~$ </span>Security Analyst with 1.8 years of hands-on SOC experience: monitoring, triaging, and responding to alerts. Skilled in threat detection, incident response, and remediation to safeguard enterprise infrastructure. Calm under pressure, collaborative with L2/L3, and consistently on-time against SLAs.<span className="terminal-cursor"></span> 
+                    <span className="terminal-prompt">root@security:~$ </span>Security Analyst with 2 years of hands-on SOC experience: monitoring, triaging, and responding to alerts. Skilled in threat detection, incident response, and remediation to safeguard enterprise infrastructure. Calm under pressure, collaborative with L2/L3, and consistently on-time against SLAs.<span className="terminal-cursor"></span> 
                   </>
                 ) : (
-                  'Security Analyst with 1.8 years of hands-on SOC experience: monitoring, triaging, and responding to alerts. Skilled in threat detection, incident response, and remediation to safeguard enterprise infrastructure. Calm under pressure, collaborative with L2/L3, and consistently on-time against SLAs.'
+                  'Security Analyst with 2 years of hands-on SOC experience: monitoring, triaging, and responding to alerts. Skilled in threat detection, incident response, and remediation to safeguard enterprise infrastructure. Calm under pressure, collaborative with L2/L3, and consistently on-time against SLAs.'
                 )}
               </p>
             </section>
@@ -500,7 +500,7 @@ export default function Portfolio({ defaultTheme = "dark" }) {
             <section className="card mt-8 animate-entrance timeline-section">
               <h2 className="row section-title">
                 <Shield size={20} className="accent"/> 
-                Security Incident & Response Log
+                Security Incident & Response Journal
               </h2>
               <div className="timeline mt-6">
                 <div className="space-y">
