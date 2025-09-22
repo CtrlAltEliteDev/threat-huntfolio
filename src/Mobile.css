@@ -3,9 +3,16 @@
   .container {
     width: 90vw;
   }
-  
+  .header-flex .avatar {
+    width: 100px !important;
+    min-width: 100px !important;
+    min-height: 100px !important;
+    height: 100px !important;
+    max-height: 100% !important;
+  }
   .avatar {
-    width: 100px;
+    
+    width: 80px;
     height: 100px;
   }
   
@@ -156,7 +163,7 @@
   .tools-carousel-container {
     padding: 0 20px;
     overflow: hidden;
-    width: 95%;
+    width: 91%;
   }
 
   .tool-card-wrapper {
@@ -188,7 +195,7 @@
   }
 
   .slick-list {
-    padding: 0 12px !important;
+    padding: 0 0px !important;
   }
 
   /* Fix dots visibility and positioning */
@@ -342,7 +349,7 @@
 
   .skill-card-content {
     gap: 4px;
-    max-height: 120px;
+    max-height: 100px;
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: var(--amber) rgba(245, 158, 11, 0.2);
@@ -375,7 +382,7 @@
 
   .skills-section .section-title {
     font-size: 16px;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
   }
 
   /* Reduce overall section spacing on mobile */

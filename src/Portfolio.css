@@ -290,7 +290,7 @@ button {
 @media (min-width: 640px) {
   .avatar {
     height: 140px;
-    width: 140px;
+    width: 100px;
     border-radius: 50%;
     box-shadow: 0 10px 30px rgba(0,0,0,.25);
     font-size: 18px;
