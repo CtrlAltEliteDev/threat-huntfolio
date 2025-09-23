@@ -2672,9 +2672,6 @@ html {
   margin-bottom: 0;
 }
 
-.location-text {
-  margin-top: 6px;
-}
 
 .links-container {
   margin-left: 0;
@@ -2703,7 +2700,7 @@ html {
 }
 
 .professional-summary-text {
-  margin-top: 12px;
+  margin-top: 6px;
   font-family: inherit;
 }
 

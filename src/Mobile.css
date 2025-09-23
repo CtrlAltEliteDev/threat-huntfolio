@@ -37,11 +37,7 @@
   }
   
   .section-title {
-    margin-top: 11px;
-  }
-  
-  .professional-summary-text {
-    margin: 0;
+    margin-top: 24px;
   }
   
   .experience-bullets {
@@ -567,5 +563,56 @@
   }
   .header-flex-container{
     align-items: flex-start !important;
+  }
+}
+@media (max-width: 500px) {
+  .experience-header {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    width: 100%;
+  }
+  .experience-company-info {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 8px !important;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .experience-card .chip {
+    display: inline-block !important;
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+    font-size: 11px !important;
+    padding: 4px 10px !important;
+    position: static !important;
+    align-self: center !important;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 500px) {
+  .btn-primary-resume svg {
+    display: none !important;
+  }
+  .btn-primary-resume .contact-text {
+    display: none !important;
+  }
+  .btn-primary-resume::after {
+    content: "Resume \2193";
+    display: inline;
+    font-size: 14px;
+    font-weight: 600;
+    color: inherit;
+    margin-left: 0;
+    vertical-align: middle;
+  }
+}
+@media (max-width: 500px) {
+  .professional-summary-title {
+    margin-top: 14px !important;
   }
 }

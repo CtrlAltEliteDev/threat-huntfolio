@@ -2,7 +2,7 @@ export const contact = {
   name: "Pranav Kalidas",
   email: "kalidas.pranav@gmail.com",
   linkedin: "https://linkedin.com/in/pranav-kalidas",
-  location: "Kozhikode, Kerala — 673522",
+  location: "Kozhikode, Kerala",
   title: "Security Analyst",
   summary: "Security Analyst with 2 years of hands-on SOC experience: monitoring, triaging, and responding to alerts. Skilled in threat detection, incident response, and remediation to safeguard enterprise infrastructure. Calm under pressure, collaborative with L2/L3, and consistently on-time against SLAs.",
 };
@@ -24,8 +24,8 @@ export const experience = [
     ],
   },
   {
-    role: "Software Developer Intern",
-    company: "Netmeds (Reliance Retail)",
+    role: "SDE Intern",
+    company: "Netmeds",
     location: "Chennai",
     start: "Oct 2022",
     end: "Sep 2023",

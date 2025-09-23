@@ -214,7 +214,7 @@ export default function Portfolio({ defaultTheme = "dark" }) {
         </div>
         <div>
           <p className="row muted location-text">
-            <MapPin size={16} /> Kozhikode, Kerala — 673522
+            <MapPin size={16} /> Kozhikode, Kerala
           </p>
         </div>
       </div>
@@ -238,7 +238,7 @@ export default function Portfolio({ defaultTheme = "dark" }) {
         >
           <Globe size={16} /> <span className="contact-text">linkedin.com/in/pranav-kalidas <ExternalLink size={16} /></span>
         </a>
-        <button className="btn-primary row" onClick={generateResumePDF}>
+        <button className="btn-primary btn-primary-resume row" onClick={generateResumePDF}>
           <Award size={16} />
           <span className="terminal-cursor contact-text">Download Resume (PDF)</span>
         </button>
@@ -250,8 +250,8 @@ export default function Portfolio({ defaultTheme = "dark" }) {
           {/* Summary */}
           <main className="container main-container">
             <section className={`card animate-entrance professional-summary-section ${isDark ? 'terminal-window' : ''}`}>
-              <h2 className="row section-title">
-                <Shield size={20} className="accent"/> 
+              <h2 className="row section-title professional-summary-title">
+                <Shield size={20} className="accent"/>
                 {isDark ? (
                   <span className="terminal-cursor">Professional Summary</span>
                 ) : (
