@@ -2,7 +2,7 @@ export const contact = {
   name: "Pranav Kalidas",
   email: "kalidas.pranav@gmail.com",
   linkedin: "https://linkedin.com/in/pranav-kalidas",
-  location: "Kozhikode, Kerala",
+  location: "Bengaluru, India",
   title: "Security Analyst",
   summary: "Security Analyst with 2 years of hands-on SOC experience: monitoring, triaging, and responding to alerts. Skilled in threat detection, incident response, and remediation to safeguard enterprise infrastructure. Calm under pressure, collaborative with L2/L3, and consistently on-time against SLAs.",
 };
@@ -38,6 +38,7 @@ export const experience = [
 ];
 
 export const certifications = [
+  { abbr: "CySA", name: "CompTIA Cybersecurity Analyst+ (CySA+)", org: "CompTIA", date: "Dec 2025 - Dec 2028", url: "https://cp.certmetrics.com/CompTIA/en/public/verify/credential/233da435731f4de19797b4b74f9c85fd", image: "/CySA.svg" },
   { abbr: "SC-200", name: "Security Operations Analyst Associate (SC-200)", org: "Microsoft", date: "July 2025 - July 2026", url: "https://learn.microsoft.com/api/credentials/share/en-us/PranavKalidas-0465/EC50D42E72C423D5?sharingId=698376E8CB7702F2", image: "/Microsoft.png" },
   { abbr: "CEH-Practical", name: "Certified Ethical Hacker v12 – Practical", org: "EC-Council", date: "April 2025 - April 2026", url: "https://aspen.eccouncil.org/VerifyBadge?type=certification&a=o2jPBvIo2t5MxoNABIYpODJoz1P9SBs5LqWYLx8PVTo=", image: "/CEH.png" },
   { abbr: "CEH", name: "Certified Ethical Hacker v12", org: "EC-Council", date: "August 2024 - August 2027", url: "https://aspen.eccouncil.org/VerifyBadge?type=certification&a=HLHJ6cwIhgyNHkfjTRD7IT2/lnmHgCqFdGTODBqSwnA=", image: "/CEH.png" },
@@ -92,21 +93,28 @@ export const tools = [
     desc: "Threat hunting with KQL, device timeline analysis, email triage, file and software inspection, and CVE vulnerability detection",
     category: "SIEM/XDR",
     icon: "Shield",
-    color: "#0078d4"
+    color: "#0060b9ff"
   },
   { 
     name: "IBM QRadar", 
     desc: "Log correlation, traffic flow analysis, attack context decoding, IoC triaging, threat visualization",
     category: "SIEM",
     icon: "Database",
-    color: "#0066cc"
+    color: "#3be9afff"
+  },
+  { 
+    name: "Mimecast", 
+    desc: "Phishing email triage, sender address management (blocking/holding), and mailbox purging",
+    category: "Email Security",
+    icon: "Email",
+    color: "#3a9cffff"
   },
   { 
     name: "Cisco Umbrella", 
     desc: "User browsing behaviour, identifying referral pages even when not explicitly logged in SIEM",
     category: "Secure Web Gateway",
     icon: "Network",
-    color: "#1ba1e2"
+    color: "#00b800ff"
   },
   { 
     name: "Cisco Secure Malware Analytics", 
@@ -127,7 +135,7 @@ export const tools = [
     desc: "VirusTotal, IBM X-Force, Cisco Talos, CrowdSec, Scamalytics, URLScan.io, and Whois for threat intelligence and domain analysis",
     category: "Domain & IP Enrichment",
     icon: "Globe",
-    color: "#28a745"
+    color: "#ff7492ff"
   }
 ];
 
